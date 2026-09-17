@@ -44,8 +44,9 @@ services:
     healthcheck:
       test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
       interval: 10s
-      timeout: 5s
+      timeout: 15s
       retries: 10
+      start_period: 60s
     networks: [codemate-net]
 
   go-judge:
@@ -71,6 +72,8 @@ services:
       DB_URL: jdbc:mysql://mysql:3306/${MYSQL_DATABASE:-codemate}?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
       DB_USERNAME: ${MYSQL_USER:-codemate}
       DB_PASSWORD: ${MYSQL_PASSWORD:-codemate-local-only}
+      SPRING_FLYWAY_USER: root
+      SPRING_FLYWAY_PASSWORD: ${MYSQL_ROOT_PASSWORD:-codemate-root-local}
       REDIS_HOST: redis
       REDIS_PASSWORD: ${REDIS_PASSWORD:-codemate-local-only}
       RABBITMQ_HOST: rabbitmq
@@ -112,7 +115,7 @@ services:
       backend:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1/"]
       interval: 15s
       timeout: 5s
       retries: 5
