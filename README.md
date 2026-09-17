@@ -12,7 +12,7 @@ CodeMate 是面向 Java/Python 初学者的学习与在线判题平台，包含�
 ## 环境要求
 
 - Java 17 和 Maven 3.9+
-- Node.js 20+ 和 pnpm 9+
+- Node.js 24+ 和 pnpm 11+
 - Docker Desktop（仅集成或全栈模式需要）
 
 ## 启动方式
