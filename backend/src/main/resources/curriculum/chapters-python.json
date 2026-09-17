@@ -1,0 +1,100 @@
+[
+  {
+    "logicalId": "py1",
+    "name": "第1章 Python 基础语法",
+    "markdownFile": "py1.md",
+    "sortOrder": 1,
+    "sections": [
+      {"logicalId": "py1_0", "name": "Python 简介与环境搭建", "markdownFile": "py1_0.md", "sortOrder": 0},
+      {"logicalId": "py1_1", "name": "第一个程序 Hello World", "markdownFile": "py1_1.md", "sortOrder": 1},
+      {"logicalId": "py1_2", "name": "变量与数据类型", "markdownFile": "py1_2.md", "sortOrder": 2},
+      {"logicalId": "py1_3", "name": "运算符与表达式", "markdownFile": "py1_3.md", "sortOrder": 3},
+      {"logicalId": "py1_4", "name": "条件判断 if-elif-else", "markdownFile": "py1_4.md", "sortOrder": 4},
+      {"logicalId": "py1_5", "name": "循环结构 for / while", "markdownFile": "py1_5.md", "sortOrder": 5},
+      {"logicalId": "py1_6", "name": "列表与元组", "markdownFile": "py1_6.md", "sortOrder": 6},
+      {"logicalId": "py1_7", "name": "函数定义与调用", "markdownFile": "py1_7.md", "sortOrder": 7}
+    ]
+  },
+  {
+    "logicalId": "py2",
+    "name": "第2章 Python 面向对象",
+    "markdownFile": "py2.md",
+    "sortOrder": 2,
+    "sections": [
+      {"logicalId": "py2_0", "name": "面向对象思想概述", "markdownFile": "py2_0.md", "sortOrder": 0},
+      {"logicalId": "py2_1", "name": "类与对象", "markdownFile": "py2_1.md", "sortOrder": 1},
+      {"logicalId": "py2_2", "name": "实例属性与方法", "markdownFile": "py2_2.md", "sortOrder": 2},
+      {"logicalId": "py2_3", "name": "构造方法 __init__", "markdownFile": "py2_3.md", "sortOrder": 3},
+      {"logicalId": "py2_4", "name": "封装与属性装饰器", "markdownFile": "py2_4.md", "sortOrder": 4},
+      {"logicalId": "py2_5", "name": "继承与多态", "markdownFile": "py2_5.md", "sortOrder": 5},
+      {"logicalId": "py2_6", "name": "魔术方法", "markdownFile": "py2_6.md", "sortOrder": 6}
+    ]
+  },
+  {
+    "logicalId": "py3",
+    "name": "第3章 Python 核心数据类型",
+    "markdownFile": "py3.md",
+    "sortOrder": 3,
+    "sections": [
+      {"logicalId": "py3_0", "name": "字符串详解", "markdownFile": "py3_0.md", "sortOrder": 0},
+      {"logicalId": "py3_1", "name": "字典与集合", "markdownFile": "py3_1.md", "sortOrder": 1},
+      {"logicalId": "py3_2", "name": "推导式", "markdownFile": "py3_2.md", "sortOrder": 2},
+      {"logicalId": "py3_3", "name": "迭代器与生成器", "markdownFile": "py3_3.md", "sortOrder": 3},
+      {"logicalId": "py3_4", "name": "装饰器", "markdownFile": "py3_4.md", "sortOrder": 4},
+      {"logicalId": "py3_5", "name": "异常处理", "markdownFile": "py3_5.md", "sortOrder": 5},
+      {"logicalId": "py3_6", "name": "Lambda 与函数式", "markdownFile": "py3_6.md", "sortOrder": 6}
+    ]
+  },
+  {
+    "logicalId": "py4",
+    "name": "第4章 Python 文件与 IO",
+    "markdownFile": "py4.md",
+    "sortOrder": 4,
+    "sections": [
+      {"logicalId": "py4_0", "name": "文件读写基础", "markdownFile": "py4_0.md", "sortOrder": 0},
+      {"logicalId": "py4_1", "name": "with 语句与上下文管理", "markdownFile": "py4_1.md", "sortOrder": 1},
+      {"logicalId": "py4_2", "name": "CSV 与 JSON 处理", "markdownFile": "py4_2.md", "sortOrder": 2},
+      {"logicalId": "py4_3", "name": "os 与 pathlib", "markdownFile": "py4_3.md", "sortOrder": 3},
+      {"logicalId": "py4_4", "name": "序列化与 pickle", "markdownFile": "py4_4.md", "sortOrder": 4}
+    ]
+  },
+  {
+    "logicalId": "py5",
+    "name": "第5章 Python 常用内置库",
+    "markdownFile": "py5.md",
+    "sortOrder": 5,
+    "sections": [
+      {"logicalId": "py5_0", "name": "collections 模块", "markdownFile": "py5_0.md", "sortOrder": 0},
+      {"logicalId": "py5_1", "name": "itertools 模块", "markdownFile": "py5_1.md", "sortOrder": 1},
+      {"logicalId": "py5_2", "name": "random 与 math", "markdownFile": "py5_2.md", "sortOrder": 2},
+      {"logicalId": "py5_3", "name": "datetime 日期处理", "markdownFile": "py5_3.md", "sortOrder": 3},
+      {"logicalId": "py5_4", "name": "re 正则表达式", "markdownFile": "py5_4.md", "sortOrder": 4}
+    ]
+  },
+  {
+    "logicalId": "py6",
+    "name": "第6章 Python 并发编程",
+    "markdownFile": "py6.md",
+    "sortOrder": 6,
+    "sections": [
+      {"logicalId": "py6_0", "name": "线程概念与 GIL", "markdownFile": "py6_0.md", "sortOrder": 0},
+      {"logicalId": "py6_1", "name": "threading 模块", "markdownFile": "py6_1.md", "sortOrder": 1},
+      {"logicalId": "py6_2", "name": "线程安全与 Lock", "markdownFile": "py6_2.md", "sortOrder": 2},
+      {"logicalId": "py6_3", "name": "线程池 concurrent.futures", "markdownFile": "py6_3.md", "sortOrder": 3},
+      {"logicalId": "py6_4", "name": "asyncio 异步编程", "markdownFile": "py6_4.md", "sortOrder": 4}
+    ]
+  },
+  {
+    "logicalId": "py7",
+    "name": "第7章 Python 项目实战基础",
+    "markdownFile": "py7.md",
+    "sortOrder": 7,
+    "sections": [
+      {"logicalId": "py7_0", "name": "模块与包", "markdownFile": "py7_0.md", "sortOrder": 0},
+      {"logicalId": "py7_1", "name": "虚拟环境与 pip", "markdownFile": "py7_1.md", "sortOrder": 1},
+      {"logicalId": "py7_2", "name": "代码风格与 PEP 8", "markdownFile": "py7_2.md", "sortOrder": 2},
+      {"logicalId": "py7_3", "name": "单元测试基础", "markdownFile": "py7_3.md", "sortOrder": 3},
+      {"logicalId": "py7_4", "name": "类型提示 Type Hints", "markdownFile": "py7_4.md", "sortOrder": 4}
+    ]
+  }
+]

@@ -1,0 +1,85 @@
+// ==========================================
+// CodeMate 全局样式
+// ==========================================
+
+:root {
+  // ── 字体栈 ──
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  --font-sans: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+
+  // ── 字号梯度 ──
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-lg: 16px;
+  --text-xl: 18px;
+  --text-2xl: 24px;
+
+  // ── 主题色 ──
+  --color-primary: #409EFF;
+  --color-success: #67C23A;
+  --color-warning: #E6A23C;
+  --color-danger: #F56C6C;
+  --color-info: #909399;
+
+  // ── 角色主题 ──
+  --admin-sidebar-bg: #304156;
+  --admin-sidebar-text: #bfcbd9;
+  --admin-sidebar-active: #409EFF;
+
+  // ── 布局 ──
+  --sidebar-width: 220px;
+  --content-padding: 20px;
+  --card-radius: 8px;
+  --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  height: 100%;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: #303133;
+  background: #f0f2f5;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+// ── 通用工具类 ──
+.page-container {
+  padding: var(--content-padding);
+}
+
+.card-container {
+  background: #fff;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--content-padding);
+}
+
+// ── 页面切换动效 ──
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// ── 判题状态徽章颜色 ──
+.status-ac  { color: #67C23A; }
+.status-wa  { color: #F56C6C; }
+.status-tle { color: #E6A23C; }
+.status-mle { color: #E6A23C; }
+.status-re  { color: #F56C6C; }
+.status-ce  { color: #8B5CF6; }
+.status-pending { color: #909399; }

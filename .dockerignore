@@ -1,0 +1,14 @@
+.git
+.github
+.idea
+.vscode
+**/node_modules
+**/target
+**/dist
+**/data
+**/*.log
+frontend/playwright-report
+frontend/test-results
+dev-diary
+docs
+tmp_*.json

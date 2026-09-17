@@ -1,0 +1,33 @@
+# IDE and OS
+.idea/
+.vscode/
+*.iml
+*.bak
+.DS_Store
+Thumbs.db
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Java
+backend/target/
+backend/data/
+*.class
+hs_err_pid*.log
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/playwright-report/
+frontend/test-results/
+
+# Runtime data and logs
+*.log
+data/
+tmp_*.json
+
+# Local helper scripts
+cursor-agent-zh.ps1

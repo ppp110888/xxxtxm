@@ -1,0 +1,129 @@
+name: codemate
+
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-codemate-root-local}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-codemate}
+      MYSQL_USER: ${MYSQL_USER:-codemate}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-codemate-local-only}
+      TZ: Asia/Shanghai
+    ports: ["3307:3306"]
+    volumes: ["mysql-data:/var/lib/mysql"]
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p$${MYSQL_ROOT_PASSWORD} --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [codemate-net]
+
+  redis:
+    image: redis:7.2-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD:-codemate-local-only}"]
+    ports: ["6379:6379"]
+    volumes: ["redis-data:/data"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-codemate-local-only}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [codemate-net]
+
+  rabbitmq:
+    image: rabbitmq:3.12-management-alpine
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME:-codemate}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-codemate-local-only}
+      TZ: Asia/Shanghai
+    ports: ["5672:5672", "15672:15672"]
+    volumes: ["rabbitmq-data:/var/lib/rabbitmq"]
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [codemate-net]
+
+  go-judge:
+    build:
+      context: ./sandbox
+    image: codemate-sandbox:latest
+    restart: unless-stopped
+    privileged: true
+    ports: ["5050:5050", "5051:5051"]
+    environment:
+      TZ: Asia/Shanghai
+    volumes: ["go-judge-data:/tmp"]
+    networks: [codemate-net]
+
+  backend:
+    profiles: [full]
+    build:
+      context: ./backend
+    image: codemate-backend:latest
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_URL: jdbc:mysql://mysql:3306/${MYSQL_DATABASE:-codemate}?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+      DB_USERNAME: ${MYSQL_USER:-codemate}
+      DB_PASSWORD: ${MYSQL_PASSWORD:-codemate-local-only}
+      REDIS_HOST: redis
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-codemate-local-only}
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_USERNAME: ${RABBITMQ_USERNAME:-codemate}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-codemate-local-only}
+      JUDGE_URL: http://go-judge:5050
+      CALLBACK_HOST: http://backend:8080
+      AI_API_KEY: ${AI_API_KEY:-}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost}
+      API_DOCS_ENABLED: ${API_DOCS_ENABLED:-false}
+    ports: ["8080:8080"]
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      go-judge:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://localhost:8080/actuator/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks: [codemate-net]
+
+  frontend:
+    profiles: [full]
+    build:
+      context: ./frontend
+    image: codemate-frontend:latest
+    restart: unless-stopped
+    ports: ["80:80"]
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    networks: [codemate-net]
+
+volumes:
+  mysql-data:
+  redis-data:
+  rabbitmq-data:
+  go-judge-data:
+
+networks:
+  codemate-net:
+    driver: bridge

@@ -1,0 +1,109 @@
+[
+  {
+    "logicalId": "ch1",
+    "name": "第1章 Java 语言基础",
+    "markdownFile": "ch1.md",
+    "sortOrder": 1,
+    "sections": [
+      {"logicalId": "ch1_0", "name": "Java 简介与环境搭建", "markdownFile": "ch1_0.md", "sortOrder": 0},
+      {"logicalId": "ch1_1", "name": "第一个程序 Hello World", "markdownFile": "ch1_1.md", "sortOrder": 1},
+      {"logicalId": "ch1_2", "name": "变量与数据类型", "markdownFile": "ch1_2.md", "sortOrder": 2},
+      {"logicalId": "ch1_3", "name": "运算符与表达式", "markdownFile": "ch1_3.md", "sortOrder": 3},
+      {"logicalId": "ch1_4", "name": "条件判断 if-else / switch", "markdownFile": "ch1_4.md", "sortOrder": 4},
+      {"logicalId": "ch1_5", "name": "循环结构 for / while / do-while", "markdownFile": "ch1_5.md", "sortOrder": 5},
+      {"logicalId": "ch1_6", "name": "数组", "markdownFile": "ch1_6.md", "sortOrder": 6},
+      {"logicalId": "ch1_7", "name": "方法的定义与调用", "markdownFile": "ch1_7.md", "sortOrder": 7}
+    ]
+  },
+  {
+    "logicalId": "ch2",
+    "name": "第2章 面向对象编程",
+    "markdownFile": "ch2.md",
+    "sortOrder": 2,
+    "sections": [
+      {"logicalId": "ch2_0", "name": "面向对象思想概述", "markdownFile": "ch2_0.md", "sortOrder": 0},
+      {"logicalId": "ch2_1", "name": "类与对象", "markdownFile": "ch2_1.md", "sortOrder": 1},
+      {"logicalId": "ch2_2", "name": "成员变量与成员方法", "markdownFile": "ch2_2.md", "sortOrder": 2},
+      {"logicalId": "ch2_3", "name": "构造方法", "markdownFile": "ch2_3.md", "sortOrder": 3},
+      {"logicalId": "ch2_4", "name": "封装与访问修饰符", "markdownFile": "ch2_4.md", "sortOrder": 4},
+      {"logicalId": "ch2_5", "name": "继承 extends", "markdownFile": "ch2_5.md", "sortOrder": 5},
+      {"logicalId": "ch2_6", "name": "方法重写 override vs 重载 overload", "markdownFile": "ch2_6.md", "sortOrder": 6},
+      {"logicalId": "ch2_7", "name": "多态", "markdownFile": "ch2_7.md", "sortOrder": 7},
+      {"logicalId": "ch2_8", "name": "抽象类", "markdownFile": "ch2_8.md", "sortOrder": 8},
+      {"logicalId": "ch2_9", "name": "接口 interface", "markdownFile": "ch2_9.md", "sortOrder": 9},
+      {"logicalId": "ch2_10", "name": "内部类基础", "markdownFile": "ch2_10.md", "sortOrder": 10},
+      {"logicalId": "ch2_11", "name": "枚举 enum", "markdownFile": "ch2_11.md", "sortOrder": 11}
+    ]
+  },
+  {
+    "logicalId": "ch3",
+    "name": "第3章 Java 核心类库",
+    "markdownFile": "ch3.md",
+    "sortOrder": 3,
+    "sections": [
+      {"logicalId": "ch3_1", "name": "String 类详解", "markdownFile": "ch3_1.md", "sortOrder": 1},
+      {"logicalId": "ch3_2", "name": "StringBuilder / StringBuffer", "markdownFile": "ch3_2.md", "sortOrder": 2},
+      {"logicalId": "ch3_3", "name": "包装类与自动装箱拆箱", "markdownFile": "ch3_3.md", "sortOrder": 3},
+      {"logicalId": "ch3_4", "name": "Math 与 Random", "markdownFile": "ch3_4.md", "sortOrder": 4},
+      {"logicalId": "ch3_5", "name": "日期与时间 API", "markdownFile": "ch3_5.md", "sortOrder": 5},
+      {"logicalId": "ch3_6", "name": "正则表达式基础", "markdownFile": "ch3_6.md", "sortOrder": 6},
+      {"logicalId": "ch3_7", "name": "异常处理", "markdownFile": "ch3_7.md", "sortOrder": 7}
+    ]
+  },
+  {
+    "logicalId": "ch4",
+    "name": "第4章 集合框架",
+    "markdownFile": "ch4.md",
+    "sortOrder": 4,
+    "sections": [
+      {"logicalId": "ch4_0", "name": "集合框架概述", "markdownFile": "ch4_0.md", "sortOrder": 0},
+      {"logicalId": "ch4_1", "name": "ArrayList", "markdownFile": "ch4_1.md", "sortOrder": 1},
+      {"logicalId": "ch4_2", "name": "LinkedList", "markdownFile": "ch4_2.md", "sortOrder": 2},
+      {"logicalId": "ch4_3", "name": "HashSet 与 hashCode/equals", "markdownFile": "ch4_3.md", "sortOrder": 3},
+      {"logicalId": "ch4_4", "name": "TreeSet 与 Comparable/Comparator", "markdownFile": "ch4_4.md", "sortOrder": 4},
+      {"logicalId": "ch4_5", "name": "HashMap", "markdownFile": "ch4_5.md", "sortOrder": 5},
+      {"logicalId": "ch4_6", "name": "TreeMap", "markdownFile": "ch4_6.md", "sortOrder": 6},
+      {"logicalId": "ch4_7", "name": "Collections 工具类", "markdownFile": "ch4_7.md", "sortOrder": 7},
+      {"logicalId": "ch4_8", "name": "泛型深入", "markdownFile": "ch4_8.md", "sortOrder": 8}
+    ]
+  },
+  {
+    "logicalId": "ch5",
+    "name": "第5章 IO 流",
+    "markdownFile": "ch5.md",
+    "sortOrder": 5,
+    "sections": [
+      {"logicalId": "ch5_1", "name": "File 类基础", "markdownFile": "ch5_1.md", "sortOrder": 1},
+      {"logicalId": "ch5_2", "name": "字节流 InputStream/OutputStream", "markdownFile": "ch5_2.md", "sortOrder": 2},
+      {"logicalId": "ch5_3", "name": "字符流 Reader/Writer", "markdownFile": "ch5_3.md", "sortOrder": 3},
+      {"logicalId": "ch5_4", "name": "缓冲流", "markdownFile": "ch5_4.md", "sortOrder": 4},
+      {"logicalId": "ch5_5", "name": "对象序列化", "markdownFile": "ch5_5.md", "sortOrder": 5}
+    ]
+  },
+  {
+    "logicalId": "ch6",
+    "name": "第6章 多线程",
+    "markdownFile": "ch6.md",
+    "sortOrder": 6,
+    "sections": [
+      {"logicalId": "ch6_1", "name": "线程概念与生命周期", "markdownFile": "ch6_1.md", "sortOrder": 1},
+      {"logicalId": "ch6_2", "name": "创建线程 Thread / Runnable", "markdownFile": "ch6_2.md", "sortOrder": 2},
+      {"logicalId": "ch6_3", "name": "线程安全与 synchronized", "markdownFile": "ch6_3.md", "sortOrder": 3},
+      {"logicalId": "ch6_4", "name": "线程池 ExecutorService", "markdownFile": "ch6_4.md", "sortOrder": 4},
+      {"logicalId": "ch6_5", "name": "并发工具类", "markdownFile": "ch6_5.md", "sortOrder": 5}
+    ]
+  },
+  {
+    "logicalId": "ch7",
+    "name": "第7章 Java 8+ 新特性",
+    "markdownFile": "ch7.md",
+    "sortOrder": 7,
+    "sections": [
+      {"logicalId": "ch7_1", "name": "Lambda 表达式", "markdownFile": "ch7_1.md", "sortOrder": 1},
+      {"logicalId": "ch7_2", "name": "Stream API", "markdownFile": "ch7_2.md", "sortOrder": 2},
+      {"logicalId": "ch7_3", "name": "Optional", "markdownFile": "ch7_3.md", "sortOrder": 3},
+      {"logicalId": "ch7_4", "name": "方法引用", "markdownFile": "ch7_4.md", "sortOrder": 4},
+      {"logicalId": "ch7_5", "name": "函数式接口", "markdownFile": "ch7_5.md", "sortOrder": 5}
+    ]
+  }
+]

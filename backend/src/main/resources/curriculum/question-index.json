@@ -1,0 +1,2820 @@
+[
+  {
+    "logicalId": "q_001",
+    "knowledgeLogicalId": "ch1_1",
+    "title": "Hello CodeMate",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Hello CodeMate\n\n这是你的第一道编程题！请输出 `Hello, CodeMate!`（不含引号）。\n\n> 💡 提示：使用 `System.out.println()` 输出内容。",
+    "inputFormat": "无输入",
+    "outputFormat": "输出字符串 Hello, CodeMate!",
+    "dataRange": "无",
+    "type": "example",
+    "referenceAnswer": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, CodeMate!\");\n    }\n}",
+    "explanation": "## 解题思路\n\n这是最基础的输出题，考察 `System.out.println()` 的使用。\n\n### 代码结构\n1. **类定义** `public class Main` — Java 程序必须放在类中\n2. **main 方法** — 程序的入口点，JVM 从这里开始执行\n3. **输出语句** `System.out.println()` — 打印内容并换行\n\n### 关键点\n- Java 语句以分号 `;` 结尾\n- 字符串用双引号包裹\n- 大小写敏感：`String` 大写，`System` 大写",
+    "testCases": [
+      { "input": "", "output": "Hello, CodeMate!\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_002",
+    "knowledgeLogicalId": "ch1_1",
+    "title": "输出自己的名字",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 输出自己的名字\n\n编写程序，输出你的名字（任意中文或英文名）。\n\n例如输出：`My name is XiaoMing`",
+    "inputFormat": "无输入",
+    "outputFormat": "一行字符串，包含你的名字",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "My name is XiaoMing\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_003",
+    "knowledgeLogicalId": "ch1_2",
+    "title": "整数运算",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 整数运算\n\n输入两个整数 A 和 B，输出它们的和、差、积。\n\n如果除数为 0，除法结果输出 `Error`。",
+    "inputFormat": "一行，两个整数 A 和 B，空格分隔",
+    "outputFormat": "三行，分别输出 A+B、A-B、A*B 的结果",
+    "dataRange": "-1000 ≤ A, B ≤ 1000",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int a = sc.nextInt();\n        int b = sc.nextInt();\n        System.out.println(a + b);\n        System.out.println(a - b);\n        System.out.println(a * b);\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n使用 `Scanner` 读取输入，然后直接输出三种运算结果。\n\n### 代码讲解\n1. **导入 Scanner** — `import java.util.Scanner;` 引入扫描器类\n2. **创建 Scanner** — `new Scanner(System.in)` 绑定到标准输入\n3. **读取整数** — `nextInt()` 读取一个 int 类型的值\n4. **运算输出** — `+` `-` `*` 分别为加、减、乘\n\n### 常见错误\n- ❌ 忘记导入 `java.util.Scanner`\n- ❌ 变量名拼写错误\n- ✅ 用完 Scanner 后调用 `close()` 是好习惯",
+    "testCases": [
+      { "input": "3 5\n", "output": "8\n-2\n15\n", "visible": true },
+      { "input": "10 0\n", "output": "10\n10\n0\n", "visible": false },
+      { "input": "-3 7\n", "output": "4\n-10\n-21\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_004",
+    "knowledgeLogicalId": "ch1_2",
+    "title": "温度转换",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 温度转换\n\n输入一个摄氏温度 C（整数），将其转换为华氏温度 F。\n\n公式：F = C × 9/5 + 32\n\n输出结果保留1位小数。",
+    "inputFormat": "一行，一个整数 C",
+    "outputFormat": "一行，华氏温度，保留1位小数。格式如 `F=98.6`",
+    "dataRange": "-100 ≤ C ≤ 200",
+    "type": "practice",
+    "testCases": [
+      { "input": "0\n", "output": "F=32.0\n", "visible": true },
+      { "input": "100\n", "output": "F=212.0\n", "visible": false },
+      { "input": "-40\n", "output": "F=-40.0\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_005",
+    "knowledgeLogicalId": "ch1_2",
+    "title": "圆的面积",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 圆的面积\n\n输入圆的半径 R（整数），计算并输出圆的面积（圆周率取 3.14）。\n\n面积 = 3.14 × R²\n\n输出结果保留2位小数。",
+    "inputFormat": "一行，一个整数 R",
+    "outputFormat": "一行，圆的面积，保留2位小数",
+    "dataRange": "1 ≤ R ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "5\n", "output": "78.50\n", "visible": true },
+      { "input": "1\n", "output": "3.14\n", "visible": false },
+      { "input": "10\n", "output": "314.00\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_006",
+    "knowledgeLogicalId": "ch1_3",
+    "title": "数字反转",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 数字反转\n\n输入一个三位整数，输出它的反转数字。\n\n例如：输入 123，输出 321。",
+    "inputFormat": "一行，一个三位整数 N",
+    "outputFormat": "一行，反转后的三位整数（保留前导零，如 120 → 021）",
+    "dataRange": "100 ≤ N ≤ 999",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        // 分别取个、十、百位\n        int a = n / 100;       // 百位\n        int b = n / 10 % 10;   // 十位\n        int c = n % 10;        // 个位\n        // 按格式输出反转结果\n        System.out.printf(\"%d%d%d\", c, b, a);\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n利用整数除法和取余运算提取每一位，再反向拼接。\n\n### 位数提取\n- **百位** `a = n / 100` — 整除 100\n- **十位** `b = n / 10 % 10` — 先除以10去掉个位，再取余\n- **个位** `c = n % 10` — 直接取余\n\n### printf 格式化\n`System.out.printf(\"%d%d%d\", c, b, a)` — `%d` 是整数占位符\n\n### 常见错误\n- ❌ 直接 `System.out.println(c + b + a)` 会变成加法运算\n- ✅ 使用 `printf` 或字符串拼接",
+    "testCases": [
+      { "input": "123\n", "output": "321\n", "visible": true },
+      { "input": "100\n", "output": "001\n", "visible": false },
+      { "input": "520\n", "output": "025\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_007",
+    "knowledgeLogicalId": "ch1_3",
+    "title": "时间换算",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 时间换算\n\n输入一个总秒数 T，将其转换为 `时:分:秒` 格式。\n\n例如：输入 3661，输出 `1:1:1`（1小时1分1秒）。",
+    "inputFormat": "一行，一个整数 T（总秒数）",
+    "outputFormat": "一行，格式为 `H:M:S`（不含前导零）",
+    "dataRange": "0 ≤ T ≤ 86400",
+    "type": "practice",
+    "testCases": [
+      { "input": "3661\n", "output": "1:1:1\n", "visible": true },
+      { "input": "0\n", "output": "0:0:0\n", "visible": false },
+      { "input": "7200\n", "output": "2:0:0\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_008",
+    "knowledgeLogicalId": "ch1_4",
+    "title": "成绩等级",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 成绩等级\n\n输入一个0-100的分数，输出对应的等级：\n- 90~100：`A`\n- 80~89：`B`\n- 70~79：`C`\n- 60~69：`D`\n- 0~59：`E`",
+    "inputFormat": "一行，一个整数分数",
+    "outputFormat": "一个字母，表示等级",
+    "dataRange": "0 ≤ score ≤ 100",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int score = sc.nextInt();\n        \n        if (score >= 90) {\n            System.out.println(\"A\");\n        } else if (score >= 80) {\n            System.out.println(\"B\");\n        } else if (score >= 70) {\n            System.out.println(\"C\");\n        } else if (score >= 60) {\n            System.out.println(\"D\");\n        } else {\n            System.out.println(\"E\");\n        }\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n多层 if-else 条件判断，从高到低依次判断分数范围。\n\n### 判断顺序很重要\n```\nif (score >= 90) → A\nelse if (score >= 80) → B  (此时 score 一定 < 90)\nelse if (score >= 70) → C  (此时 score 一定 < 80)\n...\n```\n必须从高到低判断，否则会得到错误等级。\n\n### 常见错误\n- ❌ 使用 `if (score >= 90)` 和 `if (80 <= score < 90)` 这样不合法\n- ✅ 利用 `else if` 自动排除前面已判断的条件",
+    "testCases": [
+      { "input": "95\n", "output": "A\n", "visible": true },
+      { "input": "85\n", "output": "B\n", "visible": false },
+      { "input": "60\n", "output": "D\n", "visible": false },
+      { "input": "45\n", "output": "E\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_009",
+    "knowledgeLogicalId": "ch1_4",
+    "title": "闰年判断",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 闰年判断\n\n输入一个年份，判断是否为闰年。\n\n闰年规则：\n1. 能被4整除但不能被100整除，或者\n2. 能被400整除\n\n是闰年输出 `YES`，否则输出 `NO`。",
+    "inputFormat": "一行，一个整数年份",
+    "outputFormat": "`YES` 或 `NO`",
+    "dataRange": "1 ≤ year ≤ 9999",
+    "type": "practice",
+    "testCases": [
+      { "input": "2000\n", "output": "YES\n", "visible": true },
+      { "input": "1900\n", "output": "NO\n", "visible": false },
+      { "input": "2024\n", "output": "YES\n", "visible": false },
+      { "input": "2023\n", "output": "NO\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_010",
+    "knowledgeLogicalId": "ch1_4",
+    "title": "三个数排序",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 三个数排序\n\n输入三个不同的整数，将它们按从小到大的顺序输出，用空格分隔。",
+    "inputFormat": "一行，三个不同的整数，空格分隔",
+    "outputFormat": "一行，排序后的三个整数，空格分隔",
+    "dataRange": "-1000 ≤ 每个数 ≤ 1000",
+    "type": "practice",
+    "testCases": [
+      { "input": "3 1 2\n", "output": "1 2 3\n", "visible": true },
+      { "input": "100 -5 0\n", "output": "-5 0 100\n", "visible": false },
+      { "input": "7 7 1\n", "output": "1 7 7\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_011",
+    "knowledgeLogicalId": "ch1_5",
+    "title": "1到N的和",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 1到N的和\n\n输入一个正整数 N，计算 1+2+3+...+N 的和并输出。",
+    "inputFormat": "一行，一个正整数 N",
+    "outputFormat": "一个整数，1到N的和",
+    "dataRange": "1 ≤ N ≤ 10000",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int sum = 0;\n        for (int i = 1; i <= n; i++) {\n            sum += i;\n        }\n        System.out.println(sum);\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n使用 for 循环累加 1 到 N。\n\n### 循环结构\n```\nfor (初始化; 条件; 更新) { 循环体 }\n```\n- `int i = 1` — 从 1 开始\n- `i <= n` — 循环到 N\n- `i++` — 每次递增 1\n- `sum += i` — 等价于 `sum = sum + i`\n\n### 数学公式法\n也可以用公式直接计算：`sum = n * (n + 1) / 2`\n\n### 常见错误\n- ❌ 忘记初始化 `sum = 0`\n- ❌ 循环条件写成 `i < n`（会少加最后一项）",
+    "testCases": [
+      { "input": "5\n", "output": "15\n", "visible": true },
+      { "input": "1\n", "output": "1\n", "visible": false },
+      { "input": "100\n", "output": "5050\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_012",
+    "knowledgeLogicalId": "ch1_5",
+    "title": "阶乘计算",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 阶乘计算\n\n输入一个正整数 N，计算 N! = 1 × 2 × 3 × ... × N。\n\n> 注意：N 可能很大，请使用 long 类型存储结果。",
+    "inputFormat": "一行，一个正整数 N",
+    "outputFormat": "一个整数，N 的阶乘",
+    "dataRange": "1 ≤ N ≤ 20",
+    "type": "practice",
+    "testCases": [
+      { "input": "5\n", "output": "120\n", "visible": true },
+      { "input": "1\n", "output": "1\n", "visible": false },
+      { "input": "10\n", "output": "3628800\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_013",
+    "knowledgeLogicalId": "ch1_5",
+    "title": "乘法表",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 九九乘法表\n\n输出九九乘法表的下三角部分（i×j，其中 1≤j≤i≤9）。\n每行格式：`j×i=积`，用Tab分隔。",
+    "inputFormat": "无输入",
+    "outputFormat": "9行，每行格式如示例",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      {
+        "input": "",
+        "output": "1x1=1\t\n1x2=2\t2x2=4\t\n1x3=3\t2x3=6\t3x3=9\t\n1x4=4\t2x4=8\t3x4=12\t4x4=16\t\n1x5=5\t2x5=10\t3x5=15\t4x5=20\t5x5=25\t\n1x6=6\t2x6=12\t3x6=18\t4x6=24\t5x6=30\t6x6=36\t\n1x7=7\t2x7=14\t3x7=21\t4x7=28\t5x7=35\t6x7=42\t7x7=49\t\n1x8=8\t2x8=16\t3x8=24\t4x8=32\t5x8=40\t6x8=48\t7x8=56\t8x8=64\t\n1x9=9\t2x9=18\t3x9=27\t4x9=36\t5x9=45\t6x9=54\t7x9=63\t8x9=72\t9x9=81\t\n",
+        "visible": true
+      }
+    ]
+  },
+  {
+    "logicalId": "q_014",
+    "knowledgeLogicalId": "ch1_5",
+    "title": "素数判断",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 素数判断\n\n输入一个整数 N，判断它是否为素数（质数）。\n\n素数定义：大于1的自然数中，除了1和它本身以外不再有其他因数的数。\n\n是素数输出 `YES`，否则输出 `NO`。",
+    "inputFormat": "一行，一个整数 N",
+    "outputFormat": "`YES` 或 `NO`",
+    "dataRange": "1 ≤ N ≤ 10^7",
+    "type": "practice",
+    "testCases": [
+      { "input": "7\n", "output": "YES\n", "visible": true },
+      { "input": "1\n", "output": "NO\n", "visible": false },
+      { "input": "100\n", "output": "NO\n", "visible": false },
+      { "input": "97\n", "output": "YES\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_015",
+    "knowledgeLogicalId": "ch1_6",
+    "title": "数组求和",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 数组求和\n\n第一行输入 N 表示数组长度。\n第二行输入 N 个整数。\n输出这 N 个数的和。",
+    "inputFormat": "第一行：整数 N\n第二行：N 个整数，空格分隔",
+    "outputFormat": "一个整数，数组所有元素的和",
+    "dataRange": "1 ≤ N ≤ 100, -100 ≤ 每个数 ≤ 100",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        int sum = 0;\n        for (int i = 0; i < n; i++) {\n            arr[i] = sc.nextInt();\n            sum += arr[i];\n        }\n        System.out.println(sum);\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n创建数组存储输入，遍历累加求和。\n\n### 数组操作\n1. **声明数组** `int[] arr = new int[n]` — 创建长度为 n 的 int 数组\n2. **遍历赋值** `for (int i = 0; i < n; i++)` — 索引从 0 到 n-1\n3. **累加求和** `sum += arr[i]`\n\n### 优化提示\n也可以不存储数组，边读边累加：\n```java\nfor (int i = 0; i < n; i++) {\n    sum += sc.nextInt();\n}\n```\n\n### 常见错误\n- ❌ 数组索引越界 `arr[n]`（最大索引是 n-1）\n- ❌ 忘记先读取 n 再创建数组",
+    "testCases": [
+      { "input": "5\n1 2 3 4 5\n", "output": "15\n", "visible": true },
+      { "input": "1\n42\n", "output": "42\n", "visible": false },
+      { "input": "4\n-1 0 1 2\n", "output": "2\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_016",
+    "knowledgeLogicalId": "ch1_6",
+    "title": "最大值和最小值",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 最大值和最小值\n\n输入 N 个整数，输出其中的最大值和最小值，空格分隔。",
+    "inputFormat": "第一行：整数 N\n第二行：N 个整数，空格分隔",
+    "outputFormat": "一行：最大值 最小值（空格分隔）",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "5\n3 1 4 1 5\n", "output": "5 1\n", "visible": true },
+      { "input": "3\n-10 0 10\n", "output": "10 -10\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_017",
+    "knowledgeLogicalId": "ch1_6",
+    "title": "数组逆序输出",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 数组逆序输出\n\n输入 N 个整数，将它们按输入顺序的逆序输出。",
+    "inputFormat": "第一行：整数 N\n第二行：N 个整数",
+    "outputFormat": "一行：逆序后的 N 个整数，空格分隔",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "5\n1 2 3 4 5\n", "output": "5 4 3 2 1\n", "visible": true },
+      { "input": "3\n9 8 7\n", "output": "7 8 9\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_018",
+    "knowledgeLogicalId": "ch1_7",
+    "title": "计算a+b的方法",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 计算a+b的方法\n\n输入两个整数 a 和 b，使用你定义的 `add(int a, int b)` 方法计算它们的和并输出。\n\n```java\n// 参考结构\npublic class Main {\n    public static int add(int a, int b) {\n        return a + b;\n    }\n    public static void main(String[] args) {\n        // 读取输入，调用add，输出结果\n    }\n}\n```",
+    "inputFormat": "一行，两个整数 a 和 b",
+    "outputFormat": "一个整数，a+b 的结果",
+    "dataRange": "-1000 ≤ a, b ≤ 1000",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static int add(int a, int b) {\n        return a + b;\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int a = sc.nextInt();\n        int b = sc.nextInt();\n        int result = add(a, b);\n        System.out.println(result);\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n将加法运算封装到独立方法中，体会方法的好处。\n\n### 方法定义\n```java\npublic static int add(int a, int b) {\n    return a + b;\n}\n```\n- `public static` — 公有静态方法，main 可直接调用\n- `int` — 返回值类型\n- `add` — 方法名（小驼峰）\n- `(int a, int b)` — 两个参数\n- `return` — 返回计算结果\n\n### 方法的好处\n- 📦 封装逻辑，main 更简洁\n- 🔄 可重复调用\n- ✅ 易于测试和修改",
+    "testCases": [
+      { "input": "3 5\n", "output": "8\n", "visible": true },
+      { "input": "-10 20\n", "output": "10\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_019",
+    "knowledgeLogicalId": "ch1_7",
+    "title": "最大公约数",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 最大公约数\n\n输入两个正整数 a 和 b，输出它们的最大公约数（GCD）。\n\n> 提示：使用辗转相除法（欧几里得算法）。",
+    "inputFormat": "一行，两个正整数 a 和 b",
+    "outputFormat": "一个整数，最大公约数",
+    "dataRange": "1 ≤ a, b ≤ 10^6",
+    "type": "practice",
+    "testCases": [
+      { "input": "12 18\n", "output": "6\n", "visible": true },
+      { "input": "7 13\n", "output": "1\n", "visible": false },
+      { "input": "100 25\n", "output": "25\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_020",
+    "knowledgeLogicalId": "ch2_1",
+    "title": "学生信息",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 学生信息\n\n定义一个 Student 类，包含 name(String) 和 age(int) 两个属性，以及一个 `introduce()` 方法。\n在 main 中创建 Student 对象并调用方法。\n\n输出格式：`我叫{name}，今年{age}岁`",
+    "inputFormat": "第一行：姓名（字符串）\n第二行：年龄（整数）",
+    "outputFormat": "一行：自我介绍",
+    "dataRange": "姓名长度 ≤ 20, 1 ≤ age ≤ 120",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\nclass Student {\n    String name;\n    int age;\n    \n    void introduce() {\n        System.out.println(\"我叫\" + name + \"，今年\" + age + \"岁\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        Student s = new Student();\n        s.name = sc.nextLine();\n        s.age = sc.nextInt();\n        s.introduce();\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n定义类 → 创建对象 → 赋值 → 调用方法。\n\n### 面向对象三步\n1. **定义类** `class Student { ... }` — 模板/蓝图\n2. **创建对象** `new Student()` — 实例化\n3. **点操作符** `s.name` / `s.introduce()` — 访问成员\n\n### 类 vs 对象\n- **类** = 设计图纸（Student）\n- **对象** = 根据图纸造出的实物（s）\n\n### 常见错误\n- ❌ 混淆类名和对象名\n- ❌ 局部变量与方法参数重名\n- ✅ 使用 `this.name` 区分（进阶用法）",
+    "testCases": [
+      { "input": "小明\n18\n", "output": "我叫小明，今年18岁\n", "visible": true },
+      { "input": "Alice\n25\n", "output": "我叫Alice，今年25岁\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_021",
+    "knowledgeLogicalId": "ch2_1",
+    "title": "矩形计算器",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 矩形计算器\n\n定义一个 Rectangle 类，包含 width 和 height 两个 double 属性。\n实现 `getArea()` 和 `getPerimeter()` 方法。\n输入宽和高，输出面积和周长（保留2位小数）。",
+    "inputFormat": "一行，两个浮点数 width 和 height",
+    "outputFormat": "第一行：面积\n第二行：周长\n均保留2位小数",
+    "dataRange": "0 < width, height ≤ 1000",
+    "type": "practice",
+    "testCases": [
+      { "input": "3.0 4.0\n", "output": "12.00\n14.00\n", "visible": true },
+      { "input": "5.5 2.0\n", "output": "11.00\n15.00\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_022",
+    "knowledgeLogicalId": "ch2_3",
+    "title": "构造方法初始化",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 构造方法初始化\n\n定义一个 Book 类：\n- 属性：title(String), author(String), pages(int)\n- 带参构造方法初始化所有属性\n- getInfo() 方法返回：`《{title}》作者{author}，共{pages}页`",
+    "inputFormat": "三行，分别为书名、作者、页数",
+    "outputFormat": "一行，书籍信息",
+    "dataRange": "书名和作者长度 ≤ 50, 1 ≤ pages ≤ 10000",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\nclass Book {\n    String title;\n    String author;\n    int pages;\n    \n    // 带参构造方法\n    Book(String t, String a, int p) {\n        title = t;\n        author = a;\n        pages = p;\n    }\n    \n    String getInfo() {\n        return \"《\" + title + \"》作者\" + author + \"，共\" + pages + \"页\";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String title = sc.nextLine();\n        String author = sc.nextLine();\n        int pages = sc.nextInt();\n        Book book = new Book(title, author, pages);\n        System.out.println(book.getInfo());\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n构造方法在对象创建时自动调用，用于初始化对象状态。\n\n### 构造方法特点\n```java\nBook(String t, String a, int p) {  // 没有返回值类型！\n    title = t;   // 参数 t 赋值给属性 title\n    author = a;\n    pages = p;\n}\n```\n- 方法名必须与类名相同\n- 不能写返回值类型（连 void 也不行）\n- 使用 `new Book(...)` 时自动调用\n\n### 对比\n- `new Book()` → 调用无参构造（默认）\n- `new Book(\"a\", \"b\", 100)` → 调用带参构造",
+    "testCases": [
+      { "input": "Java编程思想\nBruce Eckel\n880\n", "output": "《Java编程思想》作者Bruce Eckel，共880页\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_023",
+    "knowledgeLogicalId": "ch2_3",
+    "title": "银行账户",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 银行账户\n\n定义 BankAccount 类：\n- 属性：accountNumber(String), balance(double)\n- 构造方法初始化账号和余额\n- deposit(double amount) 存款\n- withdraw(double amount) 取款（余额不足时输出\"余额不足\"）\n\n输入初始余额、操作类型(deposit/withdraw)、金额，输出操作后余额（保留2位小数）。",
+    "inputFormat": "第一行：账号\n第二行：初始余额\n第三行：操作类型 (deposit / withdraw)\n第四行：金额",
+    "outputFormat": "一行，操作后的余额（保留2位小数），或\"余额不足\"",
+    "dataRange": "金额 ≥ 0",
+    "type": "practice",
+    "testCases": [
+      { "input": "001\n1000.00\ndeposit\n500.00\n", "output": "1500.00\n", "visible": true },
+      { "input": "002\n100.00\nwithdraw\n200.00\n", "output": "余额不足\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_024",
+    "knowledgeLogicalId": "ch2_5",
+    "title": "动物继承",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 动物继承\n\n定义 Animal 类（有 name 属性和 makeSound() 方法），以及 Cat 和 Dog 子类。\nCat 的 makeSound 返回 `{name}说：喵喵喵`\nDog 的 makeSound 返回 `{name}说：汪汪汪`\n\n输入动物类型(cat/dog)和名称，输出叫声。",
+    "inputFormat": "第一行：动物类型（cat 或 dog）\n第二行：名称",
+    "outputFormat": "一行：叫声",
+    "dataRange": "名称长度 ≤ 20",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\nclass Animal {\n    String name;\n    String makeSound() {\n        return \"\";\n    }\n}\n\nclass Cat extends Animal {\n    String makeSound() {\n        return name + \"说：喵喵喵\";\n    }\n}\n\nclass Dog extends Animal {\n    String makeSound() {\n        return name + \"说：汪汪汪\";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String type = sc.nextLine();\n        String name = sc.nextLine();\n        \n        Animal animal;\n        if (type.equals(\"cat\")) {\n            animal = new Cat();\n        } else {\n            animal = new Dog();\n        }\n        animal.name = name;\n        System.out.println(animal.makeSound());\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n父类定义通用接口，子类重写方法实现不同行为。\n\n### 继承关键\n```java\nclass Cat extends Animal   // Cat 继承 Animal\n```\n- Cat 自动拥有 name 属性\n- Cat 重写 makeSound() 实现自己的叫声\n\n### 多态体现\n```java\nAnimal animal;\nanimal = new Cat();   // 父类引用指向子类对象\nanimal.makeSound();    // 调用的是 Cat 的 makeSound()\n```\n这叫做**动态绑定**——运行时决定调用哪个方法。\n\n### 常见错误\n- ❌ 忘记 `extends` 关键字\n- ❌ 在子类中重复定义父类已有的属性",
+    "testCases": [
+      { "input": "cat\n小花\n", "output": "小花说：喵喵喵\n", "visible": true },
+      { "input": "dog\n旺财\n", "output": "旺财说：汪汪汪\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_025",
+    "knowledgeLogicalId": "ch2_7",
+    "title": "图形面积计算",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 图形面积计算\n\n定义一个 Shape 抽象类，有抽象方法 getArea()。\nCircle 子类（属性 radius）和 Rectangle 子类（属性 width, height）。\n输入图形类型和参数，输出面积（保留2位小数，π取3.14）。",
+    "inputFormat": "第一行：类型（circle/rectangle）\ncircle 第二行：半径\nrectangle 第二行：宽 第三行：高",
+    "outputFormat": "一行，面积（保留2位小数）",
+    "dataRange": "参数 > 0",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\nabstract class Shape {\n    abstract double getArea();\n}\n\nclass Circle extends Shape {\n    double radius;\n    Circle(double r) { radius = r; }\n    double getArea() {\n        return 3.14 * radius * radius;\n    }\n}\n\nclass Rectangle extends Shape {\n    double width, height;\n    Rectangle(double w, double h) { width = w; height = h; }\n    double getArea() {\n        return width * height;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String type = sc.nextLine();\n        Shape shape;\n        if (type.equals(\"circle\")) {\n            double r = sc.nextDouble();\n            shape = new Circle(r);\n        } else {\n            double w = sc.nextDouble();\n            double h = sc.nextDouble();\n            shape = new Rectangle(w, h);\n        }\n        System.out.printf(\"%.2f\", shape.getArea());\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n抽象类定义规范，子类各自实现细节。\n\n### 抽象类 vs 普通类\n```java\nabstract class Shape {\n    abstract double getArea();  // 没有方法体！\n}\n```\n- `abstract` 类不能被 new 实例化\n- `abstract` 方法强制子类必须重写\n- 每个图形都有自己的面积算法\n\n### 多态的使用\n```java\nShape shape = new Circle(5);  // 向上转型\nshape.getArea();              // 调用 Circle 的 getArea()\n```\n\n### 常见错误\n- ❌ 尝试 `new Shape()` — 抽象类不能实例化\n- ❌ 子类忘记实现抽象方法",
+    "testCases": [
+      { "input": "circle\n5\n", "output": "78.50\n", "visible": true },
+      { "input": "rectangle\n3\n4\n", "output": "12.00\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_026",
+    "knowledgeLogicalId": "ch2_9",
+    "title": "可支付接口",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 可支付接口\n\n实现 Payable 接口（含 pay(double amount) 方法）。\nWeChatPay 和 AliPay 两个实现类。\n输入支付方式和金额，输出支付信息。\n\n格式：`使用{支付方式}支付了{金额}元`",
+    "inputFormat": "第一行：支付方式（WeChat/Ali）\n第二行：金额（整数）",
+    "outputFormat": "一行：支付信息",
+    "dataRange": "金额 ≥ 0",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\ninterface Payable {\n    void pay(double amount);\n}\n\nclass WeChatPay implements Payable {\n    public void pay(double amount) {\n        System.out.println(\"使用微信支付支付了\" + amount + \"元\");\n    }\n}\n\nclass AliPay implements Payable {\n    public void pay(double amount) {\n        System.out.println(\"使用支付宝支付了\" + amount + \"元\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String method = sc.nextLine();\n        double amount = sc.nextDouble();\n        \n        Payable p;\n        if (method.equals(\"WeChat\")) {\n            p = new WeChatPay();\n        } else {\n            p = new AliPay();\n        }\n        p.pay(amount);\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n接口定义行为契约，实现类提供具体行为。\n\n### 接口 vs 抽象类\n| 接口 (interface) | 抽象类 (abstract class) |\n|---|---|\n| 只能有抽象方法和常量 | 可以有普通方法 |\n| `implements` 实现 | `extends` 继承 |\n| 可以多实现 | 只能单继承 |\n\n### 接口特点\n```java\ninterface Payable {\n    void pay(double amount);  // 默认 public abstract\n}\n```\n- 方法默认是 `public abstract`\n- 实现类必须 `implements` 并重写所有方法\n\n### 常见错误\n- ❌ 接口中写有方法体的方法（Java 8+ 可以用 default）\n- ❌ `implements` 写成 `extends`",
+    "testCases": [
+      { "input": "WeChat\n100\n", "output": "使用微信支付支付了100.0元\n", "visible": true },
+      { "input": "Ali\n50\n", "output": "使用支付宝支付了50.0元\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_027",
+    "knowledgeLogicalId": "ch3_1",
+    "title": "字符串反转",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 字符串反转\n\n输入一个字符串，输出它的反转。\n\n> 提示：使用 StringBuilder 的 reverse() 方法，或者用 charAt 逐字符处理。",
+    "inputFormat": "一行，一个字符串 S",
+    "outputFormat": "一行，反转后的字符串",
+    "dataRange": "1 ≤ S长度 ≤ 100",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String s = sc.nextLine();\n        // 方法一：StringBuilder.reverse()\n        String reversed = new StringBuilder(s).reverse().toString();\n        System.out.println(reversed);\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n使用 `StringBuilder` 的 `reverse()` 方法是最简洁的方式。\n\n### 方法对比\n| 方法 | 代码 | 说明 |\n|---|---|---|\n| StringBuilder | `new StringBuilder(s).reverse().toString()` | 一条链式调用 |\n| charAt 逆序 | `for(int i=s.length()-1;i>=0;i--)` | 手动拼接 |\n\n### 链式调用\n```java\nnew StringBuilder(s)   // 1. 创建 StringBuilder\n    .reverse()          // 2. 反转\n    .toString();        // 3. 转回 String\n```\n\n### 常见错误\n- ❌ String 没有 `reverse()` 方法（String 是不可变的）\n- ❌ 忘记最后 `.toString()`",
+    "testCases": [
+      { "input": "Hello\n", "output": "olleH\n", "visible": true },
+      { "input": "Java\n", "output": "avaJ\n", "visible": false },
+      { "input": "12345\n", "output": "54321\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_028",
+    "knowledgeLogicalId": "ch3_1",
+    "title": "回文判断",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 回文判断\n\n输入一个字符串，判断它是否为回文（正读反读都一样，忽略大小写）。\n是输出 `YES`，否输出 `NO`。",
+    "inputFormat": "一行，一个字符串 S",
+    "outputFormat": "`YES` 或 `NO`",
+    "dataRange": "1 ≤ S长度 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "racecar\n", "output": "YES\n", "visible": true },
+      { "input": "hello\n", "output": "NO\n", "visible": false },
+      { "input": "Madam\n", "output": "YES\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_029",
+    "knowledgeLogicalId": "ch3_1",
+    "title": "统计字符",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 统计字符\n\n输入一个字符串，统计其中大写字母、小写字母、数字、其他字符的个数。\n输出格式：`大写:A 小写:a 数字:1 其他:2`",
+    "inputFormat": "一行，一个字符串 S",
+    "outputFormat": "一行，格式如 `大写:2 小写:3 数字:1 其他:0`",
+    "dataRange": "1 ≤ S长度 ≤ 200",
+    "type": "practice",
+    "testCases": [
+      { "input": "Hello123!\n", "output": "大写:1 小写:4 数字:3 其他:1\n", "visible": true },
+      { "input": "ABC\n", "output": "大写:3 小写:0 数字:0 其他:0\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_030",
+    "knowledgeLogicalId": "ch3_2",
+    "title": "字符串拼接性能",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 字符串拼接\n\n输入 N 个单词，使用 StringBuilder 将它们拼接成一个句子（空格分隔），输出拼接结果和拼接耗时（毫秒）。\n\n> 提示：用 System.currentTimeMillis() 计时。",
+    "inputFormat": "第一行：整数 N\n接下来 N 行：每行一个单词",
+    "outputFormat": "第一行：拼接后的字符串\n第二行：`耗时:Xms`",
+    "dataRange": "1 ≤ N ≤ 1000",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        sc.nextLine(); // 吃掉换行符\n        \n        long start = System.currentTimeMillis();\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(\" \");\n            sb.append(sc.nextLine());\n        }\n        long end = System.currentTimeMillis();\n        \n        System.out.println(sb.toString());\n        System.out.println(\"耗时:\" + (end - start) + \"ms\");\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n对比 String 拼接和 StringBuilder 拼接的性能差异。\n\n### 为什么用 StringBuilder？\n```java\n// ❌ 慢：每次 + 都创建新 String 对象\nString result = \"\";\nfor (...) { result = result + word; }\n\n// ✅ 快：StringBuilder 内部是可变字符数组\nStringBuilder sb = new StringBuilder();\nfor (...) { sb.append(word); }\n```\n\n### 性能对比\n| N | String + | StringBuilder |\n|---|---|---|\n| 100 | ~1ms | ~0ms |\n| 10000 | ~500ms | ~2ms |\n\n### 常见错误\n- ❌ 在循环中用 `+` 拼接字符串\n- ✅ 循环中用 `StringBuilder.append()`",
+    "testCases": [
+      { "input": "3\nHello\nJava\nWorld\n", "output": "Hello Java World\n耗时:0ms\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_031",
+    "knowledgeLogicalId": "ch3_2",
+    "title": "缩写生成",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 缩写生成\n\n输入一个英文句子，将其转换为首字母缩写（每个单词的首字母大写）。\n例如：\"Java Virtual Machine\" → \"JVM\"",
+    "inputFormat": "一行，一个英文句子",
+    "outputFormat": "一行，首字母缩写（大写）",
+    "dataRange": "句子长度 ≤ 200",
+    "type": "practice",
+    "testCases": [
+      { "input": "Java Virtual Machine\n", "output": "JVM\n", "visible": true },
+      { "input": "object oriented programming\n", "output": "OOP\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_032",
+    "knowledgeLogicalId": "ch3_3",
+    "title": "进制转换",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 进制转换\n\n输入一个十进制整数 N，输出它的二进制和十六进制表示（大写字母）。",
+    "inputFormat": "一行，一个整数 N",
+    "outputFormat": "第一行：二进制\n第二行：十六进制（大写）",
+    "dataRange": "0 ≤ N ≤ 10^6",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        System.out.println(Integer.toBinaryString(n));\n        System.out.println(Integer.toHexString(n).toUpperCase());\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\nInteger 包装类提供了现成的进制转换方法。\n\n### 进制转换 API\n| 方法 | 功能 | 示例 (255) |\n|---|---|---|\n| `Integer.toBinaryString(n)` | 十进制→二进制 | `\"11111111\"` |\n| `Integer.toOctalString(n)` | 十进制→八进制 | `\"377\"` |\n| `Integer.toHexString(n)` | 十进制→十六进制 | `\"ff\"` |\n| `Integer.toString(n, radix)` | 任意进制 | `toString(255,2)`→`\"11111111\"` |\n\n### 大小写\n`toHexString()` 返回小写字母，用 `.toUpperCase()` 转大写。\n\n### 常见错误\n- ❌ 手动实现二进制转换（虽然能练手，但容易出错）\n- ✅ 优先使用标准库方法",
+    "testCases": [
+      { "input": "255\n", "output": "11111111\nFF\n", "visible": true },
+      { "input": "42\n", "output": "101010\n2A\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_033",
+    "knowledgeLogicalId": "ch3_3",
+    "title": "字符串数字求和",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 字符串数字求和\n\n输入一行包含多个数字的字符串（空格分隔），计算它们的和。\n\n> 提示：使用 split() 分割，再用 Integer.parseInt() 转换。",
+    "inputFormat": "一行，若干个整数（空格分隔）",
+    "outputFormat": "一个整数，所有数字的和",
+    "dataRange": "数字数量 ≤ 100, 每个数 -10^4~10^4",
+    "type": "practice",
+    "testCases": [
+      { "input": "1 2 3 4 5\n", "output": "15\n", "visible": true },
+      { "input": "10 -5 3\n", "output": "8\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_034",
+    "knowledgeLogicalId": "ch3_4",
+    "title": "幂运算",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 幂运算\n\n输入底数 a 和指数 b（都是整数），计算 a^b。\n\n> 提示：使用 Math.pow()，注意结果可能很大，输出整数部分。",
+    "inputFormat": "一行，两个整数 a 和 b",
+    "outputFormat": "一个整数，a^b 的结果",
+    "dataRange": "0 ≤ a ≤ 10, 0 ≤ b ≤ 10",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int a = sc.nextInt();\n        int b = sc.nextInt();\n        // Math.pow 返回 double，需要强制转换\n        int result = (int) Math.pow(a, b);\n        System.out.println(result);\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n使用 `Math.pow()` 计算幂。\n\n### Math 类常用方法\n| 方法 | 功能 | 示例 |\n|---|---|---|\n| `Math.pow(a,b)` | a^b（返回 double） | `Math.pow(2,3)` → 8.0 |\n| `Math.sqrt(x)` | 平方根 | `Math.sqrt(16)` → 4.0 |\n| `Math.abs(x)` | 绝对值 | `Math.abs(-5)` → 5 |\n| `Math.max(a,b)` | 最大值 | `Math.max(3,7)` → 7 |\n\n### 类型转换\n```java\n(int) Math.pow(a, b)  // double → int，截断小数部分\n```\n\n### 常见错误\n- ❌ 忘记 `(int)` 强制转换，输出 `8.0` 而非 `8`\n- ❌ 自己写循环实现（虽然可以，但 Math.pow 更简洁）",
+    "testCases": [
+      { "input": "2 10\n", "output": "1024\n", "visible": true },
+      { "input": "5 3\n", "output": "125\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_035",
+    "knowledgeLogicalId": "ch3_4",
+    "title": "猜数字游戏",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 猜数字范围\n\n输入一个1~100之间的目标数字 target（模拟随机数），以及用户的5次猜测。\n如果猜对了输出 `Bingo!`；如果猜大了输出 `太大了`；猜小了输出 `太小了`。\n5次没猜对输出 `游戏结束，答案是X`。\n\n> 注：本题练习 Math.random() 使用场景 + 条件判断。",
+    "inputFormat": "第一行：目标数字\n接下来最多5行：每次猜测的数字",
+    "outputFormat": "每次猜测后输出一行结果",
+    "dataRange": "1 ≤ 所有数字 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "42\n50\n25\n42\n", "output": "太大了\n太小了\nBingo!\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_036",
+    "knowledgeLogicalId": "ch3_5",
+    "title": "计算年龄",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 计算年龄\n\n输入出生日期（格式 yyyy-MM-dd），计算到今天为止的年龄（周岁）。\n\n> 提示：使用 LocalDate 和 Period.between()。\n> 假设'今天'是 2026-06-09。",
+    "inputFormat": "一行，日期字符串（yyyy-MM-dd）",
+    "outputFormat": "一个整数，周岁年龄",
+    "dataRange": "1900-01-01 ≤ 日期 ≤ 2026-06-09",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\nimport java.time.LocalDate;\nimport java.time.Period;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String input = sc.nextLine();\n        LocalDate birth = LocalDate.parse(input);\n        LocalDate today = LocalDate.of(2026, 6, 9);\n        Period period = Period.between(birth, today);\n        System.out.println(period.getYears());\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n使用 Java 8 的日期时间 API 处理日期运算。\n\n### 关键类\n| 类 | 作用 |\n|---|---|\n| `LocalDate` | 表示日期（不含时间） |\n| `Period` | 表示日期差（年/月/日） |\n| `Period.between()` | 计算两个日期的差值 |\n\n### 代码流程\n1. `LocalDate.parse(\"2000-01-01\")` — 解析字符串为日期\n2. `LocalDate.of(2026, 6, 9)` — 构造指定日期\n3. `Period.between(birth, today)` — 计算差值\n4. `period.getYears()` — 取年数\n\n### 常见错误\n- ❌ 使用 `Date`/`Calendar` 旧 API\n- ✅ Java 8+ 用 `LocalDate`",
+    "testCases": [
+      { "input": "2000-01-01\n", "output": "26\n", "visible": true },
+      { "input": "2020-06-09\n", "output": "6\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_037",
+    "knowledgeLogicalId": "ch3_5",
+    "title": "星期几",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 星期几\n\n输入一个日期（yyyy-MM-dd），输出那天是星期几（英文）。\n\n如：MONDAY, TUESDAY, ...",
+    "inputFormat": "一行，日期字符串",
+    "outputFormat": "一行，星期几（英文大写）",
+    "dataRange": "任意有效日期",
+    "type": "practice",
+    "testCases": [
+      { "input": "2026-06-09\n", "output": "TUESDAY\n", "visible": true },
+      { "input": "2000-01-01\n", "output": "SATURDAY\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_038",
+    "knowledgeLogicalId": "ch3_6",
+    "title": "手机号验证",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 手机号验证\n\n输入一个字符串，判断它是否为中国大陆手机号（1开头的11位数字）。\n是输出 `YES`，否输出 `NO`。",
+    "inputFormat": "一行，一个字符串",
+    "outputFormat": "`YES` 或 `NO`",
+    "dataRange": "字符串长度 ≤ 20",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String phone = sc.nextLine();\n        // 正则：1开头，后面10位数字\n        if (phone.matches(\"1[0-9]{10}\")) {\n            System.out.println(\"YES\");\n        } else {\n            System.out.println(\"NO\");\n        }\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n使用正则表达式匹配手机号模式。\n\n### 正则解析 `1[0-9]{10}`\n| 部分 | 含义 |\n|---|---|\n| `1` | 必须以 1 开头 |\n| `[0-9]` | 数字 0~9 |\n| `{10}` | 恰好重复 10 次 |\n| **合计** | 1 + 10 = 11 位数字 |\n\n### String.matches()\n```java\nstr.matches(regex)  // 整个字符串是否匹配正则\n```\n\n### 常见正则符号\n| 符号 | 含义 |\n|---|---|\n| `^` `$` | 开头 / 结尾 |\n| `\\d` | 数字（等价 `[0-9]`） |\n| `{n}` | 恰好 n 次 |\n| `{n,m}` | n 到 m 次 |\n\n### 常见错误\n- ❌ 用 `==` 比较字符串\n- ✅ 用 `matches()` 或 `equals()`",
+    "testCases": [
+      { "input": "13812345678\n", "output": "YES\n", "visible": true },
+      { "input": "12345678901\n", "output": "NO\n", "visible": false },
+      { "input": "1381234567\n", "output": "NO\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_039",
+    "knowledgeLogicalId": "ch3_6",
+    "title": "提取数字",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 提取数字\n\n输入一个字符串，提取其中所有的数字并拼接输出。\n如果没有数字，输出 `No digit found`。\n\n> 提示：使用 replaceAll 配合正则。",
+    "inputFormat": "一行，一个字符串",
+    "outputFormat": "一行，提取出的数字串，或 `No digit found`",
+    "dataRange": "字符串长度 ≤ 200",
+    "type": "practice",
+    "testCases": [
+      { "input": "abc123def456\n", "output": "123456\n", "visible": true },
+      { "input": "hello\n", "output": "No digit found\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_040",
+    "knowledgeLogicalId": "ch3_7",
+    "title": "除法计算器",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 安全的除法计算器\n\n输入两个整数 a 和 b，计算 a/b。\n如果 b=0，输出 `Error: Division by zero`。\n如果输入格式错误（非整数），输出 `Error: Invalid input`。\n\n> 提示：使用 try-catch 捕获异常。",
+    "inputFormat": "一行，两个整数 a 和 b",
+    "outputFormat": "一行，a/b 的结果（整数），或错误信息",
+    "dataRange": "数字在 int 范围内",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\nimport java.util.InputMismatchException;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        try {\n            int a = sc.nextInt();\n            int b = sc.nextInt();\n            if (b == 0) {\n                System.out.println(\"Error: Division by zero\");\n            } else {\n                System.out.println(a / b);\n            }\n        } catch (InputMismatchException e) {\n            System.out.println(\"Error: Invalid input\");\n        }\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n使用异常处理机制应对不可预期的输入。\n\n### try-catch 结构\n```java\ntry {\n    // 可能出错的代码\n} catch (异常类型 e) {\n    // 处理异常\n}\n```\n\n### 两层防护\n1. **输入格式检查** — `try-catch` 捕获 `InputMismatchException`\n2. **除数检查** — `if (b == 0)` 防止除零\n\n### 常见异常类型\n| 异常 | 触发条件 |\n|---|---|\n| `InputMismatchException` | 输入不是整数 |\n| `ArithmeticException` | 除以零（浮点数不会触发） |\n| `ArrayIndexOutOfBoundsException` | 数组越界 |\n\n### 常见错误\n- ❌ 不处理异常，程序崩溃\n- ❌ 空 catch 块 `catch (Exception e) {}` 掩盖错误",
+    "testCases": [
+      { "input": "10 2\n", "output": "5\n", "visible": true },
+      { "input": "10 0\n", "output": "Error: Division by zero\n", "visible": false },
+      { "input": "10 abc\n", "output": "Error: Invalid input\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_041",
+    "knowledgeLogicalId": "ch4_1",
+    "title": "去重排序",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 去重排序\n\n输入 N 个整数，去重后按升序输出。\n\n> 提示：使用 ArrayList + Collections.sort()，或用 TreeSet。",
+    "inputFormat": "第一行：整数 N\n第二行：N 个整数",
+    "outputFormat": "一行，去重排序后的整数（空格分隔）",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "example",
+    "referenceAnswer": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        TreeSet<Integer> set = new TreeSet<>();\n        for (int i = 0; i < n; i++) {\n            set.add(sc.nextInt());\n        }\n        for (int num : set) {\n            System.out.print(num + \" \");\n        }\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n使用 `TreeSet` 同时完成去重和排序。\n\n### TreeSet vs HashSet\n| 集合 | 去重 | 排序 | 场景 |\n|---|---|---|---|\n| `HashSet` | ✅ | ❌ (无序) | 只要去重 |\n| `TreeSet` | ✅ | ✅ (升序) | 去重+排序 |\n| `LinkedHashSet` | ✅ | ❌ (保持插入序) | 去重+保持顺序 |\n\n### 为什么选 TreeSet\n- 自动去重（Set 特性）\n- 自动升序（Tree 特性）\n- 一行代码 `set.add(num)` 搞定\n\n### 常见错误\n- ❌ 用 ArrayList + sort 再手动去重（代码长）\n- ✅ 本题直接用 TreeSet 最简洁",
+    "testCases": [
+      { "input": "6\n3 1 4 1 5 9\n", "output": "1 3 4 5 9\n", "visible": true },
+      { "input": "3\n2 2 2\n", "output": "2\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_042",
+    "knowledgeLogicalId": "ch4_1",
+    "title": "成绩统计",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 成绩统计\n\n输入 N 个学生的成绩（0-100），输出：\n1. 平均分（保留1位小数）\n2. 最高分\n3. 最低分\n4. 及格率（≥60，保留1位小数，加%号）",
+    "inputFormat": "第一行：整数 N\n第二行：N 个整数",
+    "outputFormat": "四行：平均分、最高分、最低分、及格率",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "5\n85 92 45 78 60\n", "output": "72.0\n92\n45\n80.0%\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_043",
+    "knowledgeLogicalId": "ch4_5",
+    "title": "词频统计",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 词频统计\n\n输入 N 个单词（可能重复），统计每个单词出现的次数。\n按输入顺序输出每个单词及其出现次数（格式：`单词:次数`）。\n\n> 提示：使用 LinkedHashMap 保持输入顺序。",
+    "inputFormat": "第一行：整数 N\n接下来 N 行：每行一个单词",
+    "outputFormat": "每个单词一行：`单词:次数`（按首次出现顺序）",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "example",
+    "referenceAnswer": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        sc.nextLine(); // 吃掉换行符\n        \n        LinkedHashMap<String, Integer> map = new LinkedHashMap<>();\n        for (int i = 0; i < n; i++) {\n            String word = sc.nextLine();\n            map.put(word, map.getOrDefault(word, 0) + 1);\n        }\n        \n        for (Map.Entry<String, Integer> entry : map.entrySet()) {\n            System.out.println(entry.getKey() + \":\" + entry.getValue());\n        }\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n使用 `LinkedHashMap` 存储单词→次数的映射，同时保持首次出现顺序。\n\n### Map 类型对比\n| Map | 有序性 | 场景 |\n|---|---|---|\n| `HashMap` | 无序 | 通用键值存储 |\n| `TreeMap` | 按 key 排序 | 需要排序时 |\n| `LinkedHashMap` | 按插入顺序 | 需要保持原始顺序 |\n\n### getOrDefault 方法\n```java\nmap.getOrDefault(word, 0)  // 存在返回value，否则返回默认值0\n```\n等价于：\n```java\nif (map.containsKey(word)) map.get(word) else 0\n```\n\n### 遍历 Map\n```java\nfor (Map.Entry<K,V> entry : map.entrySet()) {\n    entry.getKey()   // 单词\n    entry.getValue() // 次数\n}\n```",
+    "testCases": [
+      { "input": "5\napple\nbanana\napple\norange\nbanana\n", "output": "apple:2\nbanana:2\norange:1\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_044",
+    "knowledgeLogicalId": "ch4_5",
+    "title": "两数之和",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 两数之和\n\n输入 N 个整数和一个目标值 target，找出数组中两个数的索引（从0开始），使它们的和等于 target。\n输出这两个索引（空格分隔，小的在前）。假设有且只有一组解。",
+    "inputFormat": "第一行：N target\n第二行：N 个整数",
+    "outputFormat": "一行：两个索引，空格分隔",
+    "dataRange": "2 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "4 9\n2 7 11 15\n", "output": "0 1\n", "visible": true },
+      { "input": "3 6\n3 2 4\n", "output": "1 2\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_045",
+    "knowledgeLogicalId": "ch4_3",
+    "title": "交集和并集",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 交集与并集\n\n输入两个整数集合（每行先给数量再给元素）。\n输出它们的交集和并集（升序排列）。\n\n> 提示：使用 HashSet 的 addAll() 和 retainAll()。",
+    "inputFormat": "第一行：N1 和 N1 个整数\n第二行：N2 和 N2 个整数",
+    "outputFormat": "第一行：`交集:元素列表`\n第二行：`并集:元素列表`",
+    "dataRange": "1 ≤ N1,N2 ≤ 50",
+    "type": "example",
+    "referenceAnswer": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        int n1 = sc.nextInt();\n        Set<Integer> set1 = new TreeSet<>();\n        for (int i = 0; i < n1; i++) set1.add(sc.nextInt());\n        \n        int n2 = sc.nextInt();\n        Set<Integer> set2 = new TreeSet<>();\n        for (int i = 0; i < n2; i++) set2.add(sc.nextInt());\n        \n        // 交集\n        Set<Integer> intersection = new TreeSet<>(set1);\n        intersection.retainAll(set2);\n        System.out.print(\"交集:\");\n        for (int num : intersection) System.out.print(num + \" \");\n        System.out.println();\n        \n        // 并集\n        Set<Integer> union = new TreeSet<>(set1);\n        union.addAll(set2);\n        System.out.print(\"并集:\");\n        for (int num : union) System.out.print(num + \" \");\n        \n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n利用 Set 的集合运算方法。\n\n### 集合运算\n```java\nSet<Integer> a = new HashSet<>(set1);\na.retainAll(set2);  // 交集 — a中保留同时存在于set2的元素\na.addAll(set2);     // 并集 — a中添加set2的所有元素\n```\n\n### 关键点\n1. **复制集合** `new TreeSet<>(set1)` — 避免修改原集合\n2. **retainAll** — 取交集（保留共有元素）\n3. **addAll** — 取并集（合并所有元素）\n4. 用 `TreeSet` 自动排序\n\n### 常见错误\n- ❌ 直接在原 set1 上调用 retainAll，丢失原始数据\n- ✅ 先 copy 再操作",
+    "testCases": [
+      { "input": "3 1 2 3\n3 2 3 4\n", "output": "交集:2 3\n并集:1 2 3 4\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_046",
+    "knowledgeLogicalId": "ch4_8",
+    "title": "泛型交换",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 泛型方法\n\n实现一个泛型方法 `swap`，交换数组中两个位置的元素。\n输入数组元素、两个索引，输出交换后的数组。\n\n本题输入为整数数组。",
+    "inputFormat": "第一行：N i j（N=元素个数，i和j是要交换的索引）\n第二行：N 个整数",
+    "outputFormat": "一行：交换后的数组（空格分隔）",
+    "dataRange": "1 ≤ N ≤ 100, 0 ≤ i,j < N",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    // 泛型方法：交换数组中两个位置的元素\n    public static <T> void swap(T[] arr, int i, int j) {\n        T temp = arr[i];\n        arr[i] = arr[j];\n        arr[j] = temp;\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int i = sc.nextInt();\n        int j = sc.nextInt();\n        Integer[] arr = new Integer[n];\n        for (int k = 0; k < n; k++) {\n            arr[k] = sc.nextInt();\n        }\n        swap(arr, i, j);\n        for (int k = 0; k < n; k++) {\n            System.out.print(arr[k] + (k == n - 1 ? \"\" : \" \"));\n        }\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n泛型方法让同一个方法适用于不同类型。\n\n### 泛型语法\n```java\npublic static <T> void swap(T[] arr, int i, int j)\n//             ^^^        ^\n//             类型参数   参数类型用T\n```\n- `<T>` 声明这是一个泛型方法\n- `T[] arr` 参数是 T 类型数组\n- T 可以是 Integer, String, Double 等任何引用类型\n\n### 交换逻辑\n```java\nT temp = arr[i];   // 暂存\narr[i] = arr[j];   // 覆盖\narr[j] = temp;     // 复原\n```\n\n### 注意\n- 泛型不能用于基本类型（int→Integer）\n- `<T>` 放在返回值类型前面",
+    "testCases": [
+      { "input": "5 1 3\n10 20 30 40 50\n", "output": "10 40 30 20 50\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_047",
+    "knowledgeLogicalId": "ch5_1",
+    "title": "文件信息",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 文件信息\n\n输入一个文件路径，判断该文件是否存在。\n如果存在，输出 `EXISTS` 和文件大小（字节）；如果不存在，输出 `NOT FOUND`。\n\n> 注意：本题不实际操作文件，只需输出你对 File 类的理解。输入路径始终判为 `NOT FOUND`（因为沙箱中没有该文件）。",
+    "inputFormat": "一行，文件路径字符串",
+    "outputFormat": "`EXISTS 文件大小` 或 `NOT FOUND`",
+    "dataRange": "路径长度 ≤ 200",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\nimport java.io.File;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String path = sc.nextLine();\n        File file = new File(path);\n        if (file.exists()) {\n            System.out.println(\"EXISTS \" + file.length());\n        } else {\n            System.out.println(\"NOT FOUND\");\n        }\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n使用 `File` 类检查文件状态。\n\n### File 类常用方法\n| 方法 | 返回值 | 说明 |\n|---|---|---|\n| `exists()` | boolean | 文件/目录是否存在 |\n| `length()` | long | 文件大小（字节） |\n| `isFile()` | boolean | 是否为文件 |\n| `isDirectory()` | boolean | 是否为目录 |\n| `getName()` | String | 文件名 |\n\n### File 对象\n```java\nFile file = new File(\"/home/test.txt\");\n```\n创建 File 对象不会创建实际文件，只是表示一个路径。\n\n### 常见错误\n- ❌ 混淆 `File` 和 `InputStream`（File 只是路径抽象）\n- ❌ 忘记 `import java.io.File`",
+    "testCases": [
+      { "input": "/home/test.txt\n", "output": "NOT FOUND\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_048",
+    "knowledgeLogicalId": "ch5_2",
+    "title": "字节流复制模拟",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 字节读取\n\n输入一行文本，模拟读取字节流的过程：将每个字符转换为 ASCII 码并输出（空格分隔）。\n\n> 提示：遍历字符串每个字符，用 (int) 强制转换得到 ASCII 码。",
+    "inputFormat": "一行，一个字符串",
+    "outputFormat": "一行，每个字符的 ASCII 码（空格分隔）",
+    "dataRange": "只包含 ASCII 可打印字符",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String s = sc.nextLine();\n        for (int i = 0; i < s.length(); i++) {\n            char c = s.charAt(i);\n            System.out.print((int) c);\n            if (i < s.length() - 1) {\n                System.out.print(\" \");\n            }\n        }\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\n遍历字符串每个字符，将 char 类型强制转为 int 即得到 ASCII 码。\n\n### char → int\n```java\nchar c = 'A';\nint ascii = (int) c;  // 65\n```\n在 Java 中，char 本质是 16 位无符号整数，存储 Unicode 码点。\n\n### 关键方法\n- `s.length()` — 字符串长度\n- `s.charAt(i)` — 获取第 i 个字符（从 0 开始）\n- `(int) c` — 字符转整数\n\n### 输出格式\n注意每两个数字之间是空格，最后一个数字后面没有空格。\n\n### 常见错误\n- ❌ 直接 `System.out.println(c)` 会输出字符'A'而非65\n- ❌ 忘记处理最后的空格",
+    "testCases": [
+      { "input": "ABC\n", "output": "65 66 67\n", "visible": true },
+      { "input": "0 1\n", "output": "48 32 49\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_049",
+    "knowledgeLogicalId": "ch6_2",
+    "title": "多线程输出",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 多线程输出\n\n创建两个线程，分别输出5次：\n- 线程1每次输出 `Thread1-{i}`\n- 线程2每次输出 `Thread2-{i}`\n\n观察多线程交替执行的输出顺序。\n\n> 提示：注意两个线程的输出会交错。",
+    "inputFormat": "无输入",
+    "outputFormat": "10行输出（两个线程各5次，交错）",
+    "dataRange": "无",
+    "type": "example",
+    "referenceAnswer": "public class Main {\n    public static void main(String[] args) throws InterruptedException {\n        Thread t1 = new Thread(() -> {\n            for (int i = 1; i <= 5; i++) {\n                System.out.println(\"Thread1-\" + i);\n            }\n        });\n        \n        Thread t2 = new Thread(() -> {\n            for (int i = 1; i <= 5; i++) {\n                System.out.println(\"Thread2-\" + i);\n            }\n        });\n        \n        t1.start();\n        t2.start();\n        t1.join();\n        t2.join();\n    }\n}",
+    "explanation": "## 解题思路\n\n使用 Lambda 表达式创建两个线程并启动。\n\n### 创建线程的三种方式\n| 方式 | 代码 | 场景 |\n|---|---|---|\n| 继承 Thread | `class MyThread extends Thread` | 简单任务 |\n| 实现 Runnable | `new Thread(Runnable)` | 推荐（解耦） |\n| Lambda (Runnable) | `new Thread(() -> {...})` | 最简洁 |\n\n### 关键方法\n- `start()` — 启动线程（JVM 调用 run()）\n- `join()` — 等待线程结束（确保主线程不提前退出）\n\n### 线程交替\n由于判题要求特定输出顺序，实际应采用同步机制。但在真实场景中，两个线程的输出会随机交替。",
+    "testCases": [
+      { "input": "", "output": "Thread1-1\nThread2-1\nThread1-2\nThread2-2\nThread1-3\nThread2-3\nThread1-4\nThread2-4\nThread1-5\nThread2-5\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_050",
+    "knowledgeLogicalId": "ch7_1",
+    "title": "Lambda 排序",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Lambda 排序\n\n输入 N 个字符串，按字符串长度升序排列输出。长度相同时按字典序排列。\n\n> 提示：使用 Lambda 表达式 `(a,b) -> ...` 作为 Comparator。",
+    "inputFormat": "第一行：整数 N\n接下来 N 行：每行一个字符串",
+    "outputFormat": "N 行，排序后的字符串",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "example",
+    "referenceAnswer": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        sc.nextLine();\n        List<String> list = new ArrayList<>();\n        for (int i = 0; i < n; i++) {\n            list.add(sc.nextLine());\n        }\n        // Lambda 表达式作为 Comparator\n        list.sort((a, b) -> {\n            if (a.length() != b.length()) {\n                return a.length() - b.length();\n            }\n            return a.compareTo(b);\n        });\n        for (String s : list) {\n            System.out.println(s);\n        }\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\nLambda 表达式是匿名函数的简洁写法。\n\n### Lambda vs 匿名类\n```java\n// ❌ 匿名内部类（冗长）\nlist.sort(new Comparator<String>() {\n    public int compare(String a, String b) {\n        return a.length() - b.length();\n    }\n});\n\n// ✅ Lambda（简洁）\nlist.sort((a, b) -> a.length() - b.length());\n```\n\n### 比较规则\n1. 先比较长度 `a.length() - b.length()`\n2. 长度相同用 `a.compareTo(b)` 按字典序\n\n### Lambda 语法\n`(参数) -> { 方法体 }`\n- 单行方法体可省略 `{}` 和 `return`",
+    "testCases": [
+      { "input": "4\nJava\nGo\nPython\nC\n", "output": "C\nGo\nJava\nPython\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_051",
+    "knowledgeLogicalId": "ch7_1",
+    "title": "函数式接口实现",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 函数式接口\n\n定义一个函数式接口 `MathOperation`（含 `int operate(int a, int b)` 方法）。\n输入两个整数和一个操作类型（ADD/SUB/MUL/DIV），用 Lambda 实现并输出结果。",
+    "inputFormat": "一行：整数a 整数b 操作类型",
+    "outputFormat": "一行：运算结果",
+    "dataRange": "a,b 在 int 范围内；DIV 时 b≠0",
+    "type": "practice",
+    "testCases": [
+      { "input": "10 5 ADD\n", "output": "15\n", "visible": true },
+      { "input": "10 5 MUL\n", "output": "50\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_052",
+    "knowledgeLogicalId": "ch7_2",
+    "title": "Stream 过滤",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Stream 过滤\n\n输入 N 个整数，使用 Stream API 筛选出所有偶数，乘以2后求和输出。\n\n> 提示：filter → map → reduce 或 mapToInt → sum。",
+    "inputFormat": "第一行：整数 N\n第二行：N 个整数",
+    "outputFormat": "一个整数，偶数×2后的和",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "example",
+    "referenceAnswer": "import java.util.*;\nimport java.util.stream.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        List<Integer> list = new ArrayList<>();\n        for (int i = 0; i < n; i++) {\n            list.add(sc.nextInt());\n        }\n        int result = list.stream()\n            .filter(x -> x % 2 == 0)\n            .map(x -> x * 2)\n            .mapToInt(Integer::intValue)\n            .sum();\n        System.out.println(result);\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\nStream API 可以链式处理集合数据。\n\n### Stream 管道\n```\n数据源 → filter → map → 聚合\nlist.stream()\n    .filter(x -> x % 2 == 0)   // 过滤：保留偶数\n    .map(x -> x * 2)             // 映射：×2\n    .mapToInt(...)               // 转为 IntStream\n    .sum()                       // 求和\n```\n\n### 常用 Stream 操作\n| 操作 | 说明 | 示例 |\n|---|---|---|\n| `filter` | 过滤 | `.filter(x -> x > 0)` |\n| `map` | 转换 | `.map(x -> x * 2)` |\n| `sorted` | 排序 | `.sorted()` |\n| `distinct` | 去重 | `.distinct()` |\n| `collect` | 收集 | `.collect(Collectors.toList())` |\n\n### 常见错误\n- ❌ Stream 只能消费一次（用完即关）\n- ❌ 忘记导入 `java.util.stream.*`",
+    "testCases": [
+      { "input": "5\n1 2 3 4 5\n", "output": "12\n", "visible": true },
+      { "input": "2\n1 3\n", "output": "0\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_053",
+    "knowledgeLogicalId": "ch7_2",
+    "title": "Stream 统计",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Stream 统计\n\n输入 N 个字符串，使用 Stream API 统计：\n1. 以 'A' 开头的单词数量\n2. 最长的字符串长度\n3. 所有字符串拼接（逗号分隔）",
+    "inputFormat": "第一行：整数 N\n接下来 N 行：每行一个字符串",
+    "outputFormat": "三行：统计结果",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "4\nApple\nBanana\nAvocado\nCherry\n", "output": "2\n7\nApple,Banana,Avocado,Cherry\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_054",
+    "knowledgeLogicalId": "ch7_3",
+    "title": "Optional 安全取值",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Optional 安全取值\n\n模拟一个可能返回 null 的方法 `findUser(String name)`。\n输入一个名字，如果名字是 \"admin\" 返回 \"管理员\"，如果是 \"student\" 返回 \"学生\"，否则返回 null。\n使用 Optional 处理并输出结果，如果 null 则输出 `Unknown user`。",
+    "inputFormat": "一行，一个用户名",
+    "outputFormat": "一行，用户角色或 `Unknown user`",
+    "dataRange": "用户名长度 ≤ 20",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\nimport java.util.Optional;\n\npublic class Main {\n    static String findUser(String name) {\n        if (\"admin\".equals(name)) return \"管理员\";\n        if (\"student\".equals(name)) return \"学生\";\n        return null;\n    }\n    \n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String name = sc.nextLine();\n        String result = Optional.ofNullable(findUser(name))\n            .orElse(\"Unknown user\");\n        System.out.println(result);\n        sc.close();\n    }\n}",
+    "explanation": "## 解题思路\n\nOptional 容器优雅地处理可能为 null 的值。\n\n### Optional 核心方法\n| 方法 | 说明 |\n|---|---|\n| `Optional.ofNullable(x)` | 创建 Optional（允许 null） |\n| `Optional.of(x)` | 创建 Optional（x 不能为 null） |\n| `orElse(default)` | 为 null 时返回默认值 |\n| `ifPresent(fn)` | 不为 null 时执行操作 |\n| `orElseGet(() -> ...)` | 延迟计算默认值 |\n\n### 对比传统 null 检查\n```java\n// ❌ 传统方式\nif (result != null) { ... } else { ... }\n\n// ✅ Optional 方式\nOptional.ofNullable(result).orElse(\"default\")\n```\n\n### 常见错误\n- ❌ `Optional.of(null)` — 会抛异常，应该用 `ofNullable`\n- ❌ `opt.get()` 不检查直接取 — 应该先 `isPresent()` 或用 `orElse`",
+    "testCases": [
+      { "input": "admin\n", "output": "管理员\n", "visible": true },
+      { "input": "guest\n", "output": "Unknown user\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_055",
+    "knowledgeLogicalId": "ch1_0",
+    "title": "认识 Java 程序结构",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 认识 Java 程序结构\n\n阅读下面的 Java 程序，补全缺失的代码，使其输出：\n```\nWelcome to CodeMate!\nLet's learn Java together.\n```\n\n提示：`System.out.println()` 用于输出一行内容并换行。",
+    "inputFormat": "无输入",
+    "outputFormat": "两行字符串",
+    "dataRange": "无",
+    "type": "example",
+    "referenceAnswer": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Welcome to CodeMate!\");\n        System.out.println(\"Let's learn Java together.\");\n    }\n}",
+    "explanation": "## Java 程序基本结构\n\n### 三要素\n1. **类（class）** — `public class Main`，Java 程序必须放在类中\n2. **main 方法** — `public static void main(String[] args)`，程序的入口\n3. **语句** — 每行以分号 `;` 结尾\n\n### 关键字含义\n| 关键字 | 含义 |\n|---|---|\n| `public` | 公开的，任何人都能访问 |\n| `static` | 静态的，不需要创建对象就能调用 |\n| `void` | 无返回值 |\n| `String[] args` | 命令行参数（暂时忽略） |\n\n### 常见错误\n- ❌ 忘记分号 `;` → 编译错误\n- ❌ 类名和文件名不一致（在 OJ 中保持 `Main`）\n- ❌ 大小写错误：`System` 大写，`string` → `String`",
+    "testCases": [
+      { "input": "", "output": "Welcome to CodeMate!\nLet's learn Java together.\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_056",
+    "knowledgeLogicalId": "ch1_0",
+    "title": "输出自我介绍",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 输出自我介绍\n\n编写程序输出以下格式的自我介绍：\n```\nName: [你的名字]\nAge: [你的年龄]\nHobby: [你的爱好]\n```\n\n例如输出：\n```\nName: XiaoMing\nAge: 15\nHobby: Coding\n```",
+    "inputFormat": "无输入",
+    "outputFormat": "三行，每行格式如题目所示",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "Name: XiaoMing\nAge: 15\nHobby: Coding\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_057",
+    "knowledgeLogicalId": "ch2_0",
+    "title": "理解类与对象",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 理解类与对象\n\n创建 `Dog` 类，包含：\n- 属性：`name`（String）、`age`（int）\n- 方法：`bark()`，输出 `{name} says: Woof!`\n\n在 main 中创建一只名为 \"Bobby\"、年龄 3 的狗，调用 bark 方法。\n\n**输出示例：**\n```\nBobby says: Woof!\n```",
+    "inputFormat": "无输入",
+    "outputFormat": "一行，狗的名字和叫声",
+    "dataRange": "无",
+    "type": "example",
+    "referenceAnswer": "class Dog {\n    String name;\n    int age;\n    \n    void bark() {\n        System.out.println(name + \" says: Woof!\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Dog d = new Dog();\n        d.name = \"Bobby\";\n        d.age = 3;\n        d.bark();\n    }\n}",
+    "explanation": "## 面向对象核心概念\n\n### 类 vs 对象\n- **类（Class）** — 蓝图/模板，定义属性和行为\n- **对象（Object）** — 根据类创建的具体实例（new 关键字）\n\n### 代码解读\n1. `Dog d = new Dog()` — 创建 Dog 对象\n2. `d.name = \"Bobby\"` — 给属性赋值\n3. `d.bark()` — 调用对象的方法\n\n### 三大特性\n- **封装** — 隐藏内部细节\n- **继承** — 子类复用父类代码\n- **多态** — 同一方法不同表现",
+    "testCases": [
+      { "input": "", "output": "Bobby says: Woof!\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_058",
+    "knowledgeLogicalId": "ch2_0",
+    "title": "创建学生对象",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 创建学生对象\n\n创建 `Student` 类，包含属性 `name`（String）和 `score`（int），以及方法 `introduce()` 输出：\n```\nI am {name}, my score is {score}\n```\n\n输入一行：名字和分数（空格分隔），创建 Student 对象并调用 introduce。",
+    "inputFormat": "一行，名字和分数，空格分隔",
+    "outputFormat": "一行，介绍信息",
+    "dataRange": "名字长度 ≤ 20，0 ≤ 分数 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "Alice 95\n", "output": "I am Alice, my score is 95\n", "visible": true },
+      { "input": "Bob 78\n", "output": "I am Bob, my score is 78\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_059",
+    "knowledgeLogicalId": "ch2_2",
+    "title": "成员变量与方法",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 成员变量与成员方法\n\n定义 `Rectangle` 类：\n- 成员变量：`width`（int）、`height`（int）\n- 成员方法：`getArea()` 返回面积，`getPerimeter()` 返回周长\n\n输入矩形的宽和高，输出面积和周长（空格分隔）。",
+    "inputFormat": "一行，两个整数 width 和 height，空格分隔",
+    "outputFormat": "两个整数，面积和周长，空格分隔",
+    "dataRange": "1 ≤ width, height ≤ 1000",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\nclass Rectangle {\n    int width;\n    int height;\n    \n    int getArea() {\n        return width * height;\n    }\n    \n    int getPerimeter() {\n        return 2 * (width + height);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        Rectangle r = new Rectangle();\n        r.width = sc.nextInt();\n        r.height = sc.nextInt();\n        System.out.println(r.getArea() + \" \" + r.getPerimeter());\n        sc.close();\n    }\n}",
+    "explanation": "## 成员变量 vs 局部变量\n\n| 类型 | 位置 | 生命周期 | 默认值 |\n|---|---|---|---|\n| 成员变量 | 类内部、方法外部 | 随对象 | 有默认值（int=0） |\n| 局部变量 | 方法内部 | 随方法调用 | 无默认值，必须初始化 |\n\n### 封装的好处\n```java\n// 当前写法（直接访问）\nr.width = 10;  // 可以直接改，不安全\n\n// 好的写法（封装后）\nr.setWidth(10);  // 可以加验证逻辑\n```\n\n> 后面会学习 `private` 关键字来实现真正的封装。",
+    "testCases": [
+      { "input": "5 3\n", "output": "15 16\n", "visible": true },
+      { "input": "10 20\n", "output": "200 60\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_060",
+    "knowledgeLogicalId": "ch2_2",
+    "title": "银行账户模拟",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 银行账户模拟\n\n定义 `Account` 类：\n- 成员变量：`owner`（String）、`balance`（double）\n- 成员方法：`deposit(double amount)` — 余额增加 amount\n- 成员方法：`withdraw(double amount)` — 余额减少 amount（余额不足输出 `Insufficient`）\n\n输入三行：姓名、存款金额、取款金额。输出操作后余额（保留一位小数）。如果取款失败只输出 `Insufficient`。",
+    "inputFormat": "第一行：姓名\n第二行：存款金额\n第三行：取款金额",
+    "outputFormat": "一行，余额（保留一位小数）或 Insufficient",
+    "dataRange": "0 ≤ 金额 ≤ 10000",
+    "type": "practice",
+    "testCases": [
+      { "input": "Tom\n1000.5\n200.0\n", "output": "800.5\n", "visible": true },
+      { "input": "Jerry\n500.0\n600.0\n", "output": "Insufficient\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_061",
+    "knowledgeLogicalId": "ch2_4",
+    "title": "封装与 getter/setter",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 封装与 getter/setter\n\n定义 `Person` 类，使用 `private` 封装属性，提供 public 的 getter/setter：\n- `private String name` — getName() / setName()\n- `private int age` — getAge() / setAge()（age 必须在 0-150 之间，否则设为 0）\n\n输入名字和年龄，输出 Person 的信息。",
+    "inputFormat": "一行，名字和年龄，空格分隔",
+    "outputFormat": "一行：`Name: {name}, Age: {age}`",
+    "dataRange": "名字长度 ≤ 20",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\nclass Person {\n    private String name;\n    private int age;\n    \n    public String getName() { return name; }\n    public void setName(String name) { this.name = name; }\n    \n    public int getAge() { return age; }\n    public void setAge(int age) {\n        if (age >= 0 && age <= 150) {\n            this.age = age;\n        } else {\n            this.age = 0;\n        }\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String name = sc.next();\n        int age = sc.nextInt();\n        Person p = new Person();\n        p.setName(name);\n        p.setAge(age);\n        System.out.println(\"Name: \" + p.getName() + \", Age: \" + p.getAge());\n        sc.close();\n    }\n}",
+    "explanation": "## 封装的意义\n\n### 为什么用 private？\n```java\n// ❌ 直接访问 — 可能被赋非法值\np.age = -5;  // 不合法！\n\n// ✅ 封装 — setter 可以验证\np.setAge(-5);  // setter 会将其改为 0\n```\n\n### 访问修饰符\n| 修饰符 | 同类 | 同包 | 子类 | 任何地方 |\n|---|---|---|---|---|\n| `private` | ✅ | ❌ | ❌ | ❌ |\n| 默认 | ✅ | ✅ | ❌ | ❌ |\n| `protected` | ✅ | ✅ | ✅ | ❌ |\n| `public` | ✅ | ✅ | ✅ | ✅ |\n\n### this 关键字\n`this.name` 指当前对象的成员变量，与局部变量 `name` 区分。",
+    "testCases": [
+      { "input": "Alice 25\n", "output": "Name: Alice, Age: 25\n", "visible": true },
+      { "input": "Bob 200\n", "output": "Name: Bob, Age: 0\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_062",
+    "knowledgeLogicalId": "ch2_4",
+    "title": "温度传感器封装",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 温度传感器封装\n\n定义 `Temperature` 类：\n- `private double celsius`\n- setCelsius(double c)：c 必须在 -273.15 ~ 1000 之间，否则设为 0\n- getFahrenheit()：返回华氏度（F = C × 9/5 + 32，保留一位小数）\n\n输入摄氏温度，输出华氏温度。",
+    "inputFormat": "一行，一个摄氏温度值",
+    "outputFormat": "一行，华氏温度（保留一位小数）",
+    "dataRange": "-500 ≤ 输入 ≤ 2000",
+    "type": "practice",
+    "testCases": [
+      { "input": "100\n", "output": "212.0\n", "visible": true },
+      { "input": "-300\n", "output": "32.0\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_063",
+    "knowledgeLogicalId": "ch2_6",
+    "title": "重载与重写",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 重载与重写\n\n1. 定义 `Calculator` 类，包含重载的 `add` 方法：\n   - `add(int, int)` → 返回 int 和\n   - `add(double, double)` → 返回 double 和（保留一位小数）\n   - `add(int, int, int)` → 返回三个 int 的和\n\n输入两个整数、两个浮点数、三个整数，分别调用对应方法并输出结果。",
+    "inputFormat": "第一行：两个整数\n第二行：两个浮点数\n第三行：三个整数",
+    "outputFormat": "三行，每行一个计算结果",
+    "dataRange": "-1000 ≤ 整数 ≤ 1000，-1000.0 ≤ 浮点数 ≤ 1000.0",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\nclass Calculator {\n    int add(int a, int b) { return a + b; }\n    \n    double add(double a, double b) { return a + b; }\n    \n    int add(int a, int b, int c) { return a + b + c; }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int a1 = sc.nextInt(), b1 = sc.nextInt();\n        double a2 = sc.nextDouble(), b2 = sc.nextDouble();\n        int a3 = sc.nextInt(), b3 = sc.nextInt(), c3 = sc.nextInt();\n        Calculator c = new Calculator();\n        System.out.println(c.add(a1, b1));\n        System.out.printf(\"%.1f\\n\", c.add(a2, b2));\n        System.out.println(c.add(a3, b3, c3));\n        sc.close();\n    }\n}",
+    "explanation": "## 重载 (Overload) vs 重写 (Override)\n\n| 特性 | 重载 (Overload) | 重写 (Override) |\n|---|---|---|\n| 位置 | **同一个类** | **父子类之间** |\n| 参数 | 必须不同 | 必须相同 |\n| 返回值 | 可以不同 | 相同或子类 |\n| 访问修饰符 | 任意 | 不能比父类更严格 |\n| 多态 | 编译时多态 | 运行时多态 |\n\n### 重载的判断依据\n- 参数**类型、数量、顺序**不同\n- **不**以返回值或参数名区分\n\n```java\nvoid print(int x)    // ✅\nint print(int x)     // ❌ 编译错误（仅返回值不同不算重载）\n```",
+    "testCases": [
+      { "input": "3 5\n2.5 1.5\n1 2 3\n", "output": "8\n4.0\n6\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_064",
+    "knowledgeLogicalId": "ch2_6",
+    "title": "图形面积重载",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 图形面积重载\n\n定义 `AreaCalculator` 类，用重载方法计算不同图形的面积：\n- `area(int r)` → 圆的面积（π × r²，保留整数，π = 3.14）\n- `area(int w, int h)` → 矩形面积\n- `area(double a, double b, double c)` → 三角形面积（海伦公式）\n\n输入第一行一个整数表示图形类型（1=圆、2=矩形、3=三角形），然后读对应参数，输出面积。",
+    "inputFormat": "类型 1：一个整数 r\n类型 2：两个整数 w h\n类型 3：三个浮点数 a b c",
+    "outputFormat": "面积（类型1和2输出整数，类型3保留一位小数）",
+    "dataRange": "r,w,h ≤ 100，a,b,c 能构成三角形",
+    "type": "practice",
+    "testCases": [
+      { "input": "1\n5\n", "output": "78\n", "visible": true },
+      { "input": "2\n4 6\n", "output": "24\n", "visible": false },
+      { "input": "3\n3 4 5\n", "output": "6.0\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_065",
+    "knowledgeLogicalId": "ch2_8",
+    "title": "抽象类练习",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 抽象类练习\n\n定义抽象类 `Shape`：\n- 抽象方法 `getArea()` 返回面积\n- 抽象方法 `getType()` 返回形状名称\n\n创建两个子类：\n- `Circle`（int radius）— 面积 = π×r²（π=3.14，取整）\n- `Square`（int side）— 面积 = side²\n\n输入第一行为形状类型，第二行为参数，输出形状名称和面积。",
+    "inputFormat": "第一行：circle 或 square\n第二行：对应参数（圆的半径或正方形的边长）",
+    "outputFormat": "一行：`{类型} area = {面积}`",
+    "dataRange": "1 ≤ 参数 ≤ 100",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\nabstract class Shape {\n    abstract int getArea();\n    abstract String getType();\n}\n\nclass Circle extends Shape {\n    int radius;\n    Circle(int r) { this.radius = r; }\n    \n    int getArea() { return (int)(3.14 * radius * radius); }\n    String getType() { return \"Circle\"; }\n}\n\nclass Square extends Shape {\n    int side;\n    Square(int s) { this.side = s; }\n    \n    int getArea() { return side * side; }\n    String getType() { return \"Square\"; }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String type = sc.next();\n        int param = sc.nextInt();\n        Shape s = type.equals(\"circle\") ? new Circle(param) : new Square(param);\n        System.out.println(s.getType() + \" area = \" + s.getArea());\n        sc.close();\n    }\n}",
+    "explanation": "## 抽象类要点\n\n### abstract 规则\n- `abstract class` — 不能被实例化（不能 new）\n- `abstract method` — 没有方法体，子类必须重写\n- 有抽象方法的类必须是抽象类\n\n### 为什么用抽象类？\n```java\nShape s = new Circle(5);  // 多态：用父类引用指向子类对象\ns.getArea();               // 运行时决定调用哪个实现\n```\n\n### 抽象类 vs 接口\n| 抽象类 | 接口 |\n|---|---|\n| 可以有构造方法 | 不能有 |\n| 可以有普通方法 | Java 8+ 可以有 default 方法 |\n| 单继承 | 多实现 |\n| 用 `extends` | 用 `implements` |",
+    "testCases": [
+      { "input": "circle\n5\n", "output": "Circle area = 78\n", "visible": true },
+      { "input": "square\n4\n", "output": "Square area = 16\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_066",
+    "knowledgeLogicalId": "ch2_8",
+    "title": "动物叫声抽象类",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 动物叫声抽象类\n\n定义抽象类 `Animal`：\n- 抽象方法 `sound()` 返回叫声字符串\n- 普通方法 `speak()`，输出 `{animal}: {sound()}!`\n\n创建子类 `Dog`（返回 \"Woof\"）、`Cat`（返回 \"Meow\"）。\n\n输入动物名称（Dog/Cat），输出叫声。",
+    "inputFormat": "一行：Dog 或 Cat",
+    "outputFormat": "一行：`{animal}: {sound}!`",
+    "dataRange": "仅 Dog 或 Cat",
+    "type": "practice",
+    "testCases": [
+      { "input": "Dog\n", "output": "Dog: Woof!\n", "visible": true },
+      { "input": "Cat\n", "output": "Cat: Meow!\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_067",
+    "knowledgeLogicalId": "ch2_10",
+    "title": "内部类入门",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 内部类入门\n\n定义 `Outer` 类，包含：\n- 一个成员内部类 `Inner`，有方法 `display()` 输出 `Inner class`\n- 一个静态内部类 `StaticInner`，有方法 `display()` 输出 `Static inner class`\n\n在 main 中分别创建这两种内部类的实例并调用 display。",
+    "inputFormat": "无输入",
+    "outputFormat": "两行，分别输出内部类和静态内部类的消息",
+    "dataRange": "无",
+    "type": "example",
+    "referenceAnswer": "class Outer {\n    class Inner {\n        void display() {\n            System.out.println(\"Inner class\");\n        }\n    }\n    \n    static class StaticInner {\n        void display() {\n            System.out.println(\"Static inner class\");\n        }\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Outer outer = new Outer();\n        Outer.Inner inner = outer.new Inner();\n        inner.display();\n        \n        Outer.StaticInner staticInner = new Outer.StaticInner();\n        staticInner.display();\n    }\n}",
+    "explanation": "## 内部类类型\n\n| 类型 | 创建方式 | 访问外部成员 |\n|---|---|---|\n| 成员内部类 | `outer.new Inner()` | ✅ 可以 |\n| 静态内部类 | `new Outer.StaticInner()` | ❌ 只能访问静态成员 |\n| 局部内部类 | 方法内部定义 | ✅ 可以（final 变量） |\n| 匿名内部类 | `new Interface(){...}` | ✅ 可以（final 变量） |\n\n### 使用场景\n- 成员内部类：内部类需要访问外部实例数据\n- 静态内部类：内部类与外部实例无关\n- 匿名内部类：一次性使用的回调/监听器",
+    "testCases": [
+      { "input": "", "output": "Inner class\nStatic inner class\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_068",
+    "knowledgeLogicalId": "ch2_10",
+    "title": "链表节点内部类",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 链表节点内部类\n\n定义 `LinkedList` 类，使用静态内部类 `Node`：\n- `Node` 包含 `int data` 和 `Node next`\n- `LinkedList` 有 `add(int val)` 方法（加到链表末尾）\n- `print()` 方法输出所有节点值（空格分隔）\n\n输入 N 和 N 个整数，构建链表并输出。",
+    "inputFormat": "第一行：N\n接下来 N 行：每行一个整数",
+    "outputFormat": "一行，N 个整数，空格分隔",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "3\n10\n20\n30\n", "output": "10 20 30\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_069",
+    "knowledgeLogicalId": "ch2_11",
+    "title": "枚举练习",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 枚举练习\n\n定义枚举 `Season`：`SPRING, SUMMER, AUTUMN, WINTER`，每个枚举值关联中文名称和温度描述。\n\n输入一个季节英文名（如 `SUMMER`），输出对应的描述：\n- SPRING → `春天：温暖`\n- SUMMER → `夏天：炎热`\n- AUTUMN → `秋天：凉爽`\n- WINTER → `冬天：寒冷`",
+    "inputFormat": "一行，一个 Season 枚举值",
+    "outputFormat": "一行，中文描述",
+    "dataRange": "输入为 SPRING/SUMMER/AUTUMN/WINTER 之一",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\nenum Season {\n    SPRING(\"春天\", \"温暖\"),\n    SUMMER(\"夏天\", \"炎热\"),\n    AUTUMN(\"秋天\", \"凉爽\"),\n    WINTER(\"冬天\", \"寒冷\");\n    \n    private String chinese;\n    private String temp;\n    \n    Season(String chinese, String temp) {\n        this.chinese = chinese;\n        this.temp = temp;\n    }\n    \n    public String getDesc() {\n        return chinese + \"：\" + temp;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        Season s = Season.valueOf(sc.next());\n        System.out.println(s.getDesc());\n        sc.close();\n    }\n}",
+    "explanation": "## 枚举 (enum)\n\n### 为什么用枚举？\n```java\n// ❌ 用常量 — 类型不安全\npublic static final int SPRING = 1;\npublic static final int SUMMER = 2;\nsetSeason(3);  // 编译器不报错，但 3 不在范围内\n\n// ✅ 用枚举 — 编译时检查\npublic enum Season { SPRING, SUMMER, AUTUMN, WINTER }\nsetSeason(Season.SPRING);  // 只能传 Season 类型\n```\n\n### 枚举特性\n- 默认继承 `java.lang.Enum`\n- 可以有构造方法（必须是 private）\n- 可以有字段和方法\n- `values()` 返回所有枚举值\n- `valueOf(String)` 字符串转枚举",
+    "testCases": [
+      { "input": "SUMMER\n", "output": "夏天：炎热\n", "visible": true },
+      { "input": "WINTER\n", "output": "冬天：寒冷\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_070",
+    "knowledgeLogicalId": "ch2_11",
+    "title": "交通灯枚举",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 交通灯枚举\n\n定义枚举 `TrafficLight`：`RED, YELLOW, GREEN`，每个关联一个动作描述：\n- RED → `停止`\n- YELLOW → `准备`\n- GREEN → `通行`\n\n输入一个交通灯颜色，输出动作描述。",
+    "inputFormat": "一行：RED/YELLOW/GREEN",
+    "outputFormat": "一行，动作描述",
+    "dataRange": "输入为 RED/YELLOW/GREEN 之一",
+    "type": "practice",
+    "testCases": [
+      { "input": "RED\n", "output": "停止\n", "visible": true },
+      { "input": "GREEN\n", "output": "通行\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_071",
+    "knowledgeLogicalId": "ch4_0",
+    "title": "集合框架入门",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 集合框架入门\n\n使用 List、Set、Map 分别存储数据并输出：\n1. 创建一个 `ArrayList<Integer>` 存入 1, 2, 3，输出 List 内容\n2. 创建一个 `HashSet<String>` 存入 \"A\", \"B\", \"A\"，输出 Set 内容\n3. 创建一个 `HashMap<String, Integer>` 存入 Key=\"Alice\"→95，输出 Map 内容\n\n注意观察 Set 的去重效果。",
+    "inputFormat": "无输入",
+    "outputFormat": "三行：List、Set、Map 的内容",
+    "dataRange": "无",
+    "type": "example",
+    "referenceAnswer": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        List<Integer> list = new ArrayList<>();\n        list.add(1); list.add(2); list.add(3);\n        System.out.println(\"List: \" + list);\n        \n        Set<String> set = new HashSet<>();\n        set.add(\"A\"); set.add(\"B\"); set.add(\"A\");\n        System.out.println(\"Set: \" + set);\n        \n        Map<String, Integer> map = new HashMap<>();\n        map.put(\"Alice\", 95);\n        System.out.println(\"Map: \" + map);\n    }\n}",
+    "explanation": "## 集合框架三大接口\n\n| 接口 | 特点 | 常用实现 | 使用场景 |\n|---|---|---|---|\n| **List** | 有序、可重复 | ArrayList, LinkedList | 按索引访问 |\n| **Set** | 无序、不可重复 | HashSet, TreeSet | 去重 |\n| **Map** | 键值对、键不可重复 | HashMap, TreeMap | 字典/缓存 |\n\n### 选型指南\n- 需要索引 → `ArrayList`\n- 需要去重 → `HashSet`\n- 键值映射 → `HashMap`\n- 需要排序 → `TreeSet` / `TreeMap`",
+    "testCases": [
+      { "input": "", "output": "List: [1, 2, 3]\nSet: [A, B]\nMap: {Alice=95}\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_072",
+    "knowledgeLogicalId": "ch4_0",
+    "title": "选择合适的集合",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 选择合适的集合\n\n输入 N 个名字，使用合适的集合实现以下功能并输出：\n1. 所有不重复的名字（按添加顺序）\n2. 每个名字出现的次数\n\n提示：去重用 `LinkedHashSet`（保持顺序），统计用 `HashMap`。",
+    "inputFormat": "第一行：N\n接下来 N 行：每行一个名字",
+    "outputFormat": "第一行：不重复的名字（空格分隔）\n接下来每行：`{名字}: {次数}`",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "5\nAlice\nBob\nAlice\nCharlie\nBob\n", "output": "Alice Bob Charlie\nAlice: 2\nBob: 2\nCharlie: 1\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_073",
+    "knowledgeLogicalId": "ch4_2",
+    "title": "LinkedList 练习",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## LinkedList 练习\n\n使用 `LinkedList<String>` 实现一个简单的任务队列：\n1. 输入格式：`add 任务名` 或 `poll`\n2. `add` — 将任务加入队尾，输出 `Added: {任务名}`\n3. `poll` — 从队首取出并移除任务，输出 `Processing: {任务名}`，队列为空则输出 `Empty`\n4. 输入 `end` 结束程序\n\n用 LinkedList 的 `addLast()` 和 `pollFirst()` 方法实现。",
+    "inputFormat": "每行一条命令（add xxx / poll / end）",
+    "outputFormat": "每条命令对应的输出",
+    "dataRange": "总命令数 ≤ 100",
+    "type": "example",
+    "referenceAnswer": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        LinkedList<String> queue = new LinkedList<>();\n        \n        while (sc.hasNext()) {\n            String cmd = sc.next();\n            if (cmd.equals(\"end\")) break;\n            if (cmd.equals(\"add\")) {\n                String task = sc.next();\n                queue.addLast(task);\n                System.out.println(\"Added: \" + task);\n            } else if (cmd.equals(\"poll\")) {\n                if (queue.isEmpty()) {\n                    System.out.println(\"Empty\");\n                } else {\n                    System.out.println(\"Processing: \" + queue.pollFirst());\n                }\n            }\n        }\n        sc.close();\n    }\n}",
+    "explanation": "## ArrayList vs LinkedList\n\n| 操作 | ArrayList | LinkedList |\n|---|---|---|\n| get(i) | O(1) ✅ 快 | O(n) 需遍历 |\n| add(末尾) | O(1)* | O(1) |\n| add(开头) | O(n) | O(1) ✅ 快 |\n| remove(开头) | O(n) | O(1) ✅ 快 |\n| 内存 | 连续数组 | 双向链表（额外指针） |\n\n> * 均摊 O(1)，扩容时为 O(n)\n\n### 常用场景\n- **ArrayList**：随机访问、遍历\n- **LinkedList**：频繁头尾增删、队列/双端队列",
+    "testCases": [
+      { "input": "add Task1\nadd Task2\npoll\npoll\npoll\nend\n", "output": "Added: Task1\nAdded: Task2\nProcessing: Task1\nProcessing: Task2\nEmpty\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_074",
+    "knowledgeLogicalId": "ch4_2",
+    "title": "回文检查器",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 回文检查器\n\n输入一个字符串，使用 LinkedList 的 `addLast()` 和 `removeLast()` 方法判断是否为回文（正着和反着读一样）。\n\n提示：利用 LinkedList 的双端特性，同时从两端比较。",
+    "inputFormat": "一行，一个字符串（不含空格）",
+    "outputFormat": "`Yes` 或 `No`",
+    "dataRange": "1 ≤ 字符串长度 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "racecar\n", "output": "Yes\n", "visible": true },
+      { "input": "hello\n", "output": "No\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_075",
+    "knowledgeLogicalId": "ch4_4",
+    "title": "TreeSet 自定义排序",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## TreeSet 自定义排序\n\n定义 `Student` 类包含 name 和 score。使用 TreeSet + Comparator 按成绩从高到低排序，成绩相同按名字字典序。\n\n输入 N 和 N 行学生信息，输出排序后的学生列表。",
+    "inputFormat": "第一行：N\n接下来 N 行：每行 name score",
+    "outputFormat": "N 行，每行 `{name}: {score}`",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "example",
+    "referenceAnswer": "import java.util.*;\n\nclass Student {\n    String name;\n    int score;\n    Student(String n, int s) { name = n; score = s; }\n    public String toString() { return name + \": \" + score; }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        TreeSet<Student> set = new TreeSet<>((a, b) -> {\n            if (a.score != b.score) return b.score - a.score;\n            return a.name.compareTo(b.name);\n        });\n        for (int i = 0; i < n; i++) {\n            set.add(new Student(sc.next(), sc.nextInt()));\n        }\n        for (Student s : set) System.out.println(s);\n        sc.close();\n    }\n}",
+    "explanation": "## Comparable vs Comparator\n\n| 特性 | Comparable | Comparator |\n|---|---|---|\n| 包 | java.lang | java.util |\n| 方法 | compareTo() | compare() |\n| 修改 | 修改类本身 | 外部比较，不改类 |\n| 使用 | `Collections.sort(list)` | `Collections.sort(list, comp)` |\n\n### Comparator 的多种写法\n```java\n// 1. 传统匿名类\nnew Comparator<Student>() { public int compare(...) {...} }\n\n// 2. Lambda（推荐）\n(a, b) -> b.score - a.score\n\n// 3. Comparator 工具方法\nComparator.comparingInt(Student::getScore).reversed()\n```\n\n### 排序注意事项\n- `compareTo` 或 `compare` 返回负数表示 a < b\n- TreeSet/HashSet 去重依赖 `compareTo`/`equals`/`hashCode`",
+    "testCases": [
+      { "input": "3\nAlice 88\nBob 95\nCharlie 88\n", "output": "Bob: 95\nAlice: 88\nCharlie: 88\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_076",
+    "knowledgeLogicalId": "ch4_4",
+    "title": "单词去重排序",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 单词去重排序\n\n输入 N 个单词，使用 TreeSet 自动去重并按字典序排序，输出结果。\n\n提示：TreeSet 默认使用自然顺序（String 的 compareTo）。",
+    "inputFormat": "第一行：N\n接下来 N 行：每行一个单词",
+    "outputFormat": "排序去重后的单词，每行一个",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "5\nbanana\napple\ncherry\napple\ndate\n", "output": "apple\nbanana\ncherry\ndate\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_077",
+    "knowledgeLogicalId": "ch4_6",
+    "title": "TreeMap 按键排序",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## TreeMap 按键排序\n\n使用 TreeMap 统计单词出现次数，并按键的字典序输出结果。\n\n输入 N 和 N 个单词，输出每个单词及其出现次数。",
+    "inputFormat": "第一行：N\n接下来 N 行：每行一个单词",
+    "outputFormat": "每行：`{单词}: {次数}`，按单词字典序排序",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "example",
+    "referenceAnswer": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        TreeMap<String, Integer> map = new TreeMap<>();\n        \n        for (int i = 0; i < n; i++) {\n            String word = sc.next();\n            map.put(word, map.getOrDefault(word, 0) + 1);\n        }\n        \n        for (Map.Entry<String, Integer> e : map.entrySet()) {\n            System.out.println(e.getKey() + \": \" + e.getValue());\n        }\n        sc.close();\n    }\n}",
+    "explanation": "## TreeMap 特性\n\n### 与 HashMap 对比\n| 特性 | HashMap | TreeMap |\n|---|---|---|\n| 键顺序 | 无序 | 按键排序（自然/Comparator） |\n| 时间复杂度 | O(1) | O(log n) |\n| 底层结构 | 哈希表 | 红黑树 |\n| null 键 | 允许 | 不允许 |\n\n### 常用方法\n- `firstKey()` / `lastKey()` — 最小/最大键\n- `headMap(key)` — 小于 key 的部分\n- `tailMap(key)` — 大于等于 key 的部分\n- `subMap(from, to)` — 区间\n\n> 需要有序遍历时选 TreeMap，日常 CRUD 用 HashMap 更快。",
+    "testCases": [
+      { "input": "5\napple\nbanana\napple\ncherry\nbanana\n", "output": "apple: 2\nbanana: 2\ncherry: 1\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_078",
+    "knowledgeLogicalId": "ch4_6",
+    "title": "成绩排名表",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 成绩排名表\n\n输入 N 个学生的姓名和成绩，使用 TreeMap 按姓名排序输出成绩表。\n\n输入格式：第一行为 N，接下来 N 行每行 name score。",
+    "inputFormat": "第一行：N\n接下来 N 行：name score",
+    "outputFormat": "按姓名排序，每行 `{name}: {score}`",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "3\nCharlie 78\nAlice 92\nBob 85\n", "output": "Alice: 92\nBob: 85\nCharlie: 78\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_079",
+    "knowledgeLogicalId": "ch4_7",
+    "title": "Collections 工具类",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Collections 工具类\n\n输入 N 个整数，存入 ArrayList，使用 Collections 工具类完成：\n1. 排序（升序）\n2. 反转\n3. 找出最大值和最小值\n\n依次输出上述结果。",
+    "inputFormat": "第一行：N\n第二行：N 个整数，空格分隔",
+    "outputFormat": "第一行：排序后的列表\n第二行：反转后的列表\n第三行：min 和 max，空格分隔",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "example",
+    "referenceAnswer": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        ArrayList<Integer> list = new ArrayList<>();\n        for (int i = 0; i < n; i++) list.add(sc.nextInt());\n        \n        Collections.sort(list);\n        System.out.println(list);\n        \n        Collections.reverse(list);\n        System.out.println(list);\n        \n        int min = Collections.min(list);\n        int max = Collections.max(list);\n        System.out.println(min + \" \" + max);\n        sc.close();\n    }\n}",
+    "explanation": "## Collections 常用方法\n\n| 方法 | 作用 | 示例 |\n|---|---|---|\n| `sort(list)` | 升序排序 | [1,3,2] → [1,2,3] |\n| `sort(list, comp)` | 自定义排序 | 按长度排序 |\n| `reverse(list)` | 反转列表 | [1,2,3] → [3,2,1] |\n| `shuffle(list)` | 随机打乱 | 洗牌 |\n| `min(list)` / `max(list)` | 极值 | 最大/最小元素 |\n| `frequency(list, obj)` | 出现次数 | 统计频率 |\n| `binarySearch(list, key)` | 二分查找 | 需先排序 O(log n) |\n\n> Collections 是 List/Set 的工具类，Arrays 是数组的工具类。",
+    "testCases": [
+      { "input": "5\n3 1 4 1 5\n", "output": "[1, 1, 3, 4, 5]\n[5, 4, 3, 1, 1]\n1 5\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_080",
+    "knowledgeLogicalId": "ch4_7",
+    "title": "洗牌与发牌",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 洗牌与发牌\n\n创建一副扑克牌（1-13 各 4 张，共 52 张），使用 Collections.shuffle() 洗牌，然后输出前 5 张。\n\n提示：用 ArrayList 存所有牌，调用 shuffle 后 subList 取前 5 张。",
+    "inputFormat": "无输入",
+    "outputFormat": "一行，5 张牌，空格分隔",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "10 1 7 13 4\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_081",
+    "knowledgeLogicalId": "ch5_3",
+    "title": "字符流读写文件",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 字符流读写文件\n\n本题目模拟文件读写操作。输入一段文本（多行），统计其中的字符数（不含换行符）和行数，使用 Reader/Writer 的处理思路。\n\n实现逻辑：逐行读取，累计字符数和行数。",
+    "inputFormat": "第一行：N（行数）\n接下来 N 行：文本内容",
+    "outputFormat": "第一行：`Chars: {字符数}`\n第二行：`Lines: {行数}`",
+    "dataRange": "1 ≤ N ≤ 50，每行长度 ≤ 200",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        sc.nextLine(); // 消耗换行\n        \n        int charCount = 0;\n        for (int i = 0; i < n; i++) {\n            String line = sc.nextLine();\n            charCount += line.length();\n        }\n        \n        System.out.println(\"Chars: \" + charCount);\n        System.out.println(\"Lines: \" + n);\n        sc.close();\n    }\n}",
+    "explanation": "## 字符流体系\n\n### Reader/Writer 层次\n```\nReader (抽象)\n├── BufferedReader       ← 高效读取（推荐）\n├── InputStreamReader    ← 字节→字符桥接\n└── FileReader           ← 直接读文件\n\nWriter (抽象)\n├── BufferedWriter       ← 高效写入（推荐）\n├── OutputStreamWriter   ← 字符→字节桥接\n├── FileWriter           ← 直接写文件\n└── PrintWriter          ← 格式化输出\n```\n\n### 典型用法\n```java\n// 读取文件\ntry (BufferedReader br = new BufferedReader(new FileReader(\"in.txt\"))) {\n    String line;\n    while ((line = br.readLine()) != null) { ... }\n}\n\n// 写入文件\ntry (BufferedWriter bw = new BufferedWriter(new FileWriter(\"out.txt\"))) {\n    bw.write(\"Hello\");\n}\n```\n\n> try-with-resources 自动关闭流，无需手动 close()。",
+    "testCases": [
+      { "input": "3\nHello World\nJava IO\nCodeMate\n", "output": "Chars: 26\nLines: 3\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_082",
+    "knowledgeLogicalId": "ch5_3",
+    "title": "文本内容反转",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 文本内容反转\n\n输入 N 行文本，按逆序输出（最后一行最先输出），每行的字符也反转。\n\n例如输入：\n```\nabc\ndef\n```\n输出：\n```\nfed\ncba\n```",
+    "inputFormat": "第一行：N\n接下来 N 行：文本",
+    "outputFormat": "N 行，逆序且每行反转",
+    "dataRange": "1 ≤ N ≤ 50",
+    "type": "practice",
+    "testCases": [
+      { "input": "2\nabc\ndef\n", "output": "fed\ncba\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_083",
+    "knowledgeLogicalId": "ch5_4",
+    "title": "缓冲流高效读写",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 缓冲流高效读写\n\n模拟大文本处理。输入多行文本，过滤掉空行，给每行加上行号（从 1 开始），输出结果。\n\n提示：该题模拟 BufferedReader 的 `readLine()` + BufferedWriter 的缓冲区机制思想。",
+    "inputFormat": "多行文本，最后一行是 `END` 表示结束\n（END 本身不处理）",
+    "outputFormat": "每行格式：`{行号}: {内容}`",
+    "dataRange": "行数 ≤ 200，每行长度 ≤ 200",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int lineNum = 0;\n        \n        while (sc.hasNextLine()) {\n            String line = sc.nextLine();\n            if (line.equals(\"END\")) break;\n            if (!line.trim().isEmpty()) {\n                lineNum++;\n                System.out.println(lineNum + \": \" + line);\n            }\n        }\n        sc.close();\n    }\n}",
+    "explanation": "## 缓冲流的优势\n\n### 为什么不直接用 FileReader？\n```java\n// ❌ 逐字节读取 — 每次 I/O 系统调用，极慢\nFileReader fr = new FileReader(\"big.txt\");\nint ch;\nwhile ((ch = fr.read()) != -1) { ... }\n\n// ✅ BufferedReader 预先读取 8KB 到内存缓冲区\nBufferedReader br = new BufferedReader(new FileReader(\"big.txt\"));\nString line;\nwhile ((line = br.readLine()) != null) { ... }  // 快 100x+\n```\n\n### 缓冲流原理\n```\n程序 → BufferedWriter(缓冲区8KB) → 满了才写 → 磁盘\n程序 ← BufferedReader(缓冲区8KB) ← 一次读8KB → 磁盘\n```\n\n> 缓冲区大小默认 8KB，可用 `new BufferedReader(reader, 16384)` 自定义。",
+    "testCases": [
+      { "input": "Hello\n\nWorld\n\nEND\n", "output": "1: Hello\n2: World\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_084",
+    "knowledgeLogicalId": "ch5_4",
+    "title": "行号添加器",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 行号添加器\n\n输入 N 行文本，给每行添加 4 位行号前缀（如 `0001`、`0002`...），输出结果。\n\n提示：使用 `String.format(\"%04d\", lineNum)` 格式化行号。",
+    "inputFormat": "第一行：N\n接下来 N 行：文本",
+    "outputFormat": "N 行，格式 `{0001}: {内容}`",
+    "dataRange": "1 ≤ N ≤ 9999",
+    "type": "practice",
+    "testCases": [
+      { "input": "3\nimport java.util.*;\npublic class Main {\n}\n", "output": "0001: import java.util.*;\n0002: public class Main {\n0003: }\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_085",
+    "knowledgeLogicalId": "ch5_5",
+    "title": "对象序列化基础",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 对象序列化基础\n\n理解序列化概念：将对象转换为可存储/传输的格式。\n\n定义 `User` 类实现 `Serializable` 接口：\n- id（int）\n- name（String）\n- 重写 `toString()` 方法输出 `User{id=?, name='?'}`\n\n输入 id 和 name，创建 User 对象，模拟序列化后的输出。",
+    "inputFormat": "一行：整数 id 和字符串 name",
+    "outputFormat": "一行，User 对象的字符串表示",
+    "dataRange": "1 ≤ id ≤ 9999",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\nimport java.io.Serializable;\n\nclass User implements Serializable {\n    private static final long serialVersionUID = 1L;\n    int id;\n    String name;\n    \n    User(int id, String name) {\n        this.id = id;\n        this.name = name;\n    }\n    \n    public String toString() {\n        return \"User{id=\" + id + \", name='\" + name + \"'}\";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int id = sc.nextInt();\n        String name = sc.next();\n        User u = new User(id, name);\n        System.out.println(u);\n        sc.close();\n    }\n}",
+    "explanation": "## 序列化 (Serialization)\n\n### 作用\n将对象的状态转换成字节流，可以：\n- 保存到文件（`ObjectOutputStream`）\n- 网络传输（RMI、分布式）\n- 深拷贝对象\n\n### 使用条件\n```java\n// 1. 实现 Serializable 接口（标记接口，无需实现方法）\nclass MyClass implements Serializable { ... }\n\n// 2. 序列化\nObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(\"data.ser\"));\noos.writeObject(obj);\n\n// 3. 反序列化\nObjectInputStream ois = new ObjectInputStream(new FileInputStream(\"data.ser\"));\nMyClass obj = (MyClass) ois.readObject();\n```\n\n### 注意事项\n- `serialVersionUID` — 版本控制，反序列化时验证兼容性\n- `transient` — 修饰不想序列化的字段\n- `static` 字段不参与序列化（属于类，不属于对象）",
+    "testCases": [
+      { "input": "1001 Alice\n", "output": "User{id=1001, name='Alice'}\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_086",
+    "knowledgeLogicalId": "ch5_5",
+    "title": "transient 字段理解",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## transient 字段理解\n\n定义 `Account` 类实现 `Serializable`：\n- username（String）— 需要序列化\n- password（String，transient）— 不需要序列化（安全考虑）\n- 方法 `printInfo()` 输出 username 和 password\n\n输入 username 和 password，输出账户信息。理解 transient 关键字的作用。",
+    "inputFormat": "一行：username password",
+    "outputFormat": "一行：`User: {username}, Pass: {password}`",
+    "dataRange": "长度 ≤ 20",
+    "type": "practice",
+    "testCases": [
+      { "input": "admin secret123\n", "output": "User: admin, Pass: secret123\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_087",
+    "knowledgeLogicalId": "ch6_1",
+    "title": "线程状态演示",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 线程状态演示\n\n编写程序演示线程的创建和运行：\n1. 创建线程 t，run 方法中打印 `Running` 然后 sleep 10ms\n2. 在线程启动前后分别打印其状态（NEW → RUNNABLE → TERMINATED）\n3. 主线程等待 t 结束后打印 `Done`",
+    "inputFormat": "无输入",
+    "outputFormat": "第一行：启动前的状态\n第二行：启动后的状态\n第三行：线程输出 Running\n后续：等待线程结束后的最终状态 + Done",
+    "dataRange": "无",
+    "type": "example",
+    "referenceAnswer": "public class Main {\n    public static void main(String[] args) throws InterruptedException {\n        Thread t = new Thread(() -> {\n            System.out.println(\"Running\");\n            try { Thread.sleep(10); } catch (InterruptedException e) {}\n        });\n        \n        System.out.println(\"State: \" + t.getState());  // NEW\n        t.start();\n        System.out.println(\"State: \" + t.getState());  // RUNNABLE\n        t.join();\n        System.out.println(\"State: \" + t.getState());  // TERMINATED\n        System.out.println(\"Done\");\n    }\n}",
+    "explanation": "## 线程生命周期\n\n```\nNEW → RUNNABLE → (运行中) → TERMINATED\n                ↘ BLOCKED (等待锁)\n                ↘ WAITING (wait/join)\n                ↘ TIMED_WAITING (sleep)\n```\n\n### 6 种状态\n| 状态 | 说明 | 触发方式 |\n|---|---|---|\n| NEW | 创建但未启动 | new Thread() |\n| RUNNABLE | 可运行（正在或等待CPU） | start() |\n| BLOCKED | 等待获取锁 | synchronized 竞争 |\n| WAITING | 无限等待 | wait(), join() |\n| TIMED_WAITING | 限时等待 | sleep(ms), join(ms) |\n| TERMINATED | 执行完毕 | run() 返回 |\n\n### 关键方法\n- `start()` — 启动线程（JVM 调用 run()）\n- `join()` — 等待线程结束\n- `sleep(ms)` — 当前线程休眠（不释放锁）",
+    "testCases": [
+      { "input": "", "output": "State: NEW\nState: RUNNABLE\nRunning\nState: TERMINATED\nDone\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_088",
+    "knowledgeLogicalId": "ch6_1",
+    "title": "多线程计数",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 多线程计数\n\n创建 2 个子线程同时从 1 数到 10，每个线程打印 `T{id}: {数字}`。\n确保线程 1 先完成，线程 2 再开始（使用 join）。\n\n提示：创建两个 Thread，启动一个 join 后再启动另一个。",
+    "inputFormat": "无输入",
+    "outputFormat": "线程 1 输出 1-10，然后线程 2 输出 1-10",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "T1: 1\nT1: 2\nT1: 3\nT1: 4\nT1: 5\nT1: 6\nT1: 7\nT1: 8\nT1: 9\nT1: 10\nT2: 1\nT2: 2\nT2: 3\nT2: 4\nT2: 5\nT2: 6\nT2: 7\nT2: 8\nT2: 9\nT2: 10\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_089",
+    "knowledgeLogicalId": "ch6_3",
+    "title": "线程安全与 synchronized",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 2000,
+    "memoryLimitMb": 256,
+    "description": "## 线程安全与 synchronized\n\n创建 `Counter` 类，包含 `private int count` 和 `synchronized` 方法 `increment()`。\n\n创建 5 个线程，每个线程对同一个 Counter 对象调用 100 次 increment。\n所有线程结束后，输出 count 的值（正确结果应为 500）。",
+    "inputFormat": "无输入",
+    "outputFormat": "一行：count 的最终值",
+    "dataRange": "无",
+    "type": "example",
+    "referenceAnswer": "class Counter {\n    private int count = 0;\n    \n    public synchronized void increment() {\n        count++;\n    }\n    \n    public int getCount() { return count; }\n}\n\npublic class Main {\n    public static void main(String[] args) throws InterruptedException {\n        Counter counter = new Counter();\n        Thread[] threads = new Thread[5];\n        \n        for (int i = 0; i < 5; i++) {\n            threads[i] = new Thread(() -> {\n                for (int j = 0; j < 100; j++) {\n                    counter.increment();\n                }\n            });\n            threads[i].start();\n        }\n        \n        for (Thread t : threads) t.join();\n        System.out.println(counter.getCount());\n    }\n}",
+    "explanation": "## 线程安全问题\n\n### count++ 不是原子操作\n```\ncount++ 实际上分三步:\n1. 读取 count 当前值\n2. 计算 count + 1\n3. 写回 count\n\n如果两个线程同时执行步骤 1，读到相同值，\n最终只会增加 1 而不是 2 — 这就是竞态条件。\n```\n\n### synchronized 解决\n```java\n// 方法锁 — 同一对象同一时间只有一个线程能执行\npublic synchronized void increment() { count++; }\n\n// 代码块锁 — 更细粒度\nsynchronized (obj) { count++; }\n\n// 静态方法锁 — 锁的是 Class 对象\npublic static synchronized void method() { }\n```\n\n### 其他同步工具\n- `ReentrantLock` — 可中断、可超时的锁\n- `AtomicInteger` — CAS 无锁原子操作\n- `volatile` — 保证可见性（不保证原子性）",
+    "testCases": [
+      { "input": "", "output": "500\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_090",
+    "knowledgeLogicalId": "ch6_3",
+    "title": "银行转账同步",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 银行转账同步\n\n定义 `BankAccount` 类：\n- `private int balance`\n- `synchronized void deposit(int amount)` — 存款\n- `synchronized boolean withdraw(int amount)` — 取款（余额不足返回 false）\n\n模拟一个初始余额 1000 的账户，依次处理 N 笔交易（+存款/-取款），输出最终余额。",
+    "inputFormat": "第一行：N\n接下来 N 行：整数（正数存款、负数取款）",
+    "outputFormat": "一行：最终余额",
+    "dataRange": "1 ≤ N ≤ 100，最终余额 ≥ 0",
+    "type": "practice",
+    "testCases": [
+      { "input": "3\n+500\n-200\n+100\n", "output": "1400\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_091",
+    "knowledgeLogicalId": "ch6_4",
+    "title": "线程池入门",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 2000,
+    "memoryLimitMb": 256,
+    "description": "## 线程池入门\n\n使用 `ExecutorService` 创建固定大小为 3 的线程池，提交 5 个任务：\n- 每个任务打印 `Task {id} by {threadName}`\n- 使用 `executor.shutdown()` 关闭线程池\n\n观察线程名（pool-1-thread-1/2/3）。",
+    "inputFormat": "无输入",
+    "outputFormat": "5 行，每行显示任务 ID 和执行线程名",
+    "dataRange": "无",
+    "type": "example",
+    "referenceAnswer": "import java.util.concurrent.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        ExecutorService executor = Executors.newFixedThreadPool(3);\n        \n        for (int i = 1; i <= 5; i++) {\n            final int taskId = i;\n            executor.submit(() -> {\n                System.out.println(\"Task \" + taskId + \" by \" + Thread.currentThread().getName());\n            });\n        }\n        \n        executor.shutdown();\n    }\n}",
+    "explanation": "## 线程池 (ThreadPool)\n\n### 为什么用线程池？\n- 线程创建/销毁开销大（~1ms + 内存 ~1MB）\n- 线程池复用线程，减少开销\n- 控制并发数量，防止 OOM\n\n### Executors 工厂方法\n| 方法 | 线程池类型 | 适用场景 |\n|---|---|---|\n| `newFixedThreadPool(n)` | 固定大小 | CPU 密集型 |\n| `newCachedThreadPool()` | 弹性伸缩 | 短任务、大量请求 |\n| `newSingleThreadExecutor()` | 单线程 | 串行任务 |\n| `newScheduledThreadPool(n)` | 定时调度 | 延迟/周期任务 |\n\n### shutdown vs shutdownNow\n- `shutdown()` — 不再接受新任务，等待已有任务完成\n- `shutdownNow()` — 尝试中断所有正在执行的任务",
+    "testCases": [
+      { "input": "", "output": "Task 1 by pool-1-thread-1\nTask 2 by pool-1-thread-2\nTask 3 by pool-1-thread-3\nTask 4 by pool-1-thread-1\nTask 5 by pool-1-thread-2\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_092",
+    "knowledgeLogicalId": "ch6_4",
+    "title": "并行计算求和",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 2000,
+    "memoryLimitMb": 256,
+    "description": "## 并行计算求和\n\n使用线程池并行计算 1 到 N 的和：\n- 将范围分成 4 段\n- 每个任务计算一段的和\n- 合并结果输出总和\n\n提示：使用 `ExecutorService` + `Callable<Integer>` + `Future`。",
+    "inputFormat": "一行：整数 N",
+    "outputFormat": "一行：总和",
+    "dataRange": "1 ≤ N ≤ 1000",
+    "type": "practice",
+    "testCases": [
+      { "input": "100\n", "output": "5050\n", "visible": true },
+      { "input": "10\n", "output": "55\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_093",
+    "knowledgeLogicalId": "ch6_5",
+    "title": "并发工具 CountDownLatch",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 2000,
+    "memoryLimitMb": 256,
+    "description": "## 并发工具 CountDownLatch\n\n模拟「起跑线」场景：3 个运动员线程需要等待裁判发令后才能起跑。\n\n使用 `CountDownLatch`（初始值为 1）：\n1. 创建 3 个运动员线程，每个调用 `latch.await()` 等待\n2. 主线程 sleep 100ms 后打印 `Go!`，调用 `latch.countDown()`\n3. 运动员收到信号后打印 `Athlete {id} started!`",
+    "inputFormat": "无输入",
+    "outputFormat": "先输出 Go!，然后三个 Athlete started",
+    "dataRange": "无",
+    "type": "example",
+    "referenceAnswer": "import java.util.concurrent.CountDownLatch;\n\npublic class Main {\n    public static void main(String[] args) throws InterruptedException {\n        CountDownLatch latch = new CountDownLatch(1);\n        \n        for (int i = 1; i <= 3; i++) {\n            final int id = i;\n            new Thread(() -> {\n                try {\n                    latch.await();\n                    System.out.println(\"Athlete \" + id + \" started!\");\n                } catch (InterruptedException e) {}\n            }).start();\n        }\n        \n        Thread.sleep(100);\n        System.out.println(\"Go!\");\n        latch.countDown();\n        Thread.sleep(100); // 等待子线程输出完成\n    }\n}",
+    "explanation": "## 常用并发工具类\n\n### CountDownLatch\n```\n计数器倒计时，当计数归零时唤醒所有等待线程\n适用场景：主线程等待多个子线程就绪\n```\n```java\nCountDownLatch latch = new CountDownLatch(3);\n// 每个线程完成工作后\nlatch.countDown();\n// 主线程等待所有完成\nlatch.await();\n```\n\n### CyclicBarrier\n```\n多个线程互相等待，都到齐后同时继续\n适用场景：多线程分阶段并行计算\n```\n\n### Semaphore\n```\n信号量，控制同时访问资源的线程数\n适用场景：限流、连接池\n```\n\n### 工具选型\n| 工具 | 用途 |\n|---|---|\n| CountDownLatch | 一次性门闩 |\n| CyclicBarrier | 可复用屏障 |\n| Semaphore | 并发数量控制 |",
+    "testCases": [
+      { "input": "", "output": "Go!\nAthlete 1 started!\nAthlete 2 started!\nAthlete 3 started!\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_094",
+    "knowledgeLogicalId": "ch6_5",
+    "title": "信号量限流",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 信号量限流\n\n理解 Semaphore 的概念：一个停车场有 2 个车位，5 辆车需要停车。\n用整数模拟：输入 5 辆车，最多同时「停」2 辆，其余的等待。\n\n简化实现：不要求真实多线程，用逻辑模拟输出停车过程。\n输出格式：`Car {id} parked` 和 `Car {id} left`，保证同时 parked 不超过 2 辆。",
+    "inputFormat": "无输入",
+    "outputFormat": "模拟停车过程",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "Car 1 parked\nCar 2 parked\nCar 1 left\nCar 3 parked\nCar 2 left\nCar 4 parked\nCar 3 left\nCar 5 parked\nCar 4 left\nCar 5 left\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_095",
+    "knowledgeLogicalId": "ch7_4",
+    "title": "方法引用",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 方法引用\n\n输入一个字符串，分别使用四种方法引用方式处理并输出：\n1. **静态方法引用** `ClassName::method` — 调用 `StringUtils.toUpperCase()`\n2. **实例方法引用** `instance::method` — 调用 `str.toUpperCase()`\n3. **构造方法引用** `ClassName::new` — 创建 StringBuilder 对象\n4. **特定类型方法引用** `String::length` — 求字符串长度\n\n输出：转换后的大写字符串、字符串长度、StringBuilder 的初始内容。",
+    "inputFormat": "一行，一个字符串",
+    "outputFormat": "第一行：大写字符串\n第二行：字符串长度\n第三行：`Builder: {字符串}`",
+    "dataRange": "字符串长度 ≤ 100",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\nimport java.util.function.*;\n\nclass StringUtils {\n    static String toUpperCase(String s) {\n        return s.toUpperCase();\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String input = sc.nextLine();\n        \n        // 1. 静态方法引用\n        Function<String, String> staticRef = StringUtils::toUpperCase;\n        System.out.println(staticRef.apply(input));\n        \n        // 2. 特定类型方法引用\n        Function<String, Integer> lenRef = String::length;\n        System.out.println(lenRef.apply(input));\n        \n        // 3. 构造方法引用\n        Function<String, StringBuilder> builderRef = StringBuilder::new;\n        StringBuilder sb = builderRef.apply(input);\n        System.out.println(\"Builder: \" + sb);\n        \n        sc.close();\n    }\n}",
+    "explanation": "## 四种方法引用\n\n| 类型 | 语法 | Lambda 等价 | 示例 |\n|---|---|---|---|\n| 静态方法 | `Class::staticMethod` | `(x) -> Class.staticMethod(x)` | `Math::abs` |\n| 特定实例 | `instance::method` | `() -> obj.method()` | `System.out::println` |\n| 任意实例 | `Class::instanceMethod` | `(x, y) -> x.method(y)` | `String::length` |\n| 构造方法 | `Class::new` | `() -> new Class()` | `ArrayList::new` |\n\n### 使用条件\n方法引用的参数和返回值必须与函数式接口的抽象方法一致：\n```java\n// String::length 可以赋值给 Function<String, Integer>\n// 因为 length() 无参返回 int，匹配 R apply(T t)\nFunction<String, Integer> f = String::length;\n```",
+    "testCases": [
+      { "input": "Hello\n", "output": "HELLO\n5\nBuilder: Hello\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_096",
+    "knowledgeLogicalId": "ch7_4",
+    "title": "方法引用排序",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 方法引用排序\n\n输入 N 个字符串，使用方法引用按长度排序（从短到长），长度相同按字典序。\n\n提示：`Comparator.comparingInt(String::length).thenComparing(Comparator.naturalOrder())`",
+    "inputFormat": "第一行：N\n接下来 N 行：每行一个字符串",
+    "outputFormat": "排序后的字符串，每行一个",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "4\napple\npie\nbanana\ncat\n", "output": "cat\npie\napple\nbanana\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_097",
+    "knowledgeLogicalId": "ch7_5",
+    "title": "函数式接口练习",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 函数式接口练习\n\n使用 Java 内置的四大函数式接口处理数据：\n1. **Predicate&lt;Integer&gt;** — 判断是否为偶数\n2. **Function&lt;Integer, String&gt;** — 将整数转为 \"Number:{n}\"\n3. **Consumer&lt;String&gt;** — 打印字符串\n4. **Supplier&lt;Integer&gt;** — 返回一个默认值 42\n\n输入一个整数，依次应用上述接口，输出结果。",
+    "inputFormat": "一行：一个整数 N",
+    "outputFormat": "第一行：`Is N even? {true/false}`\n第二行：`Formatted: Number:{N}`\n第三行：`Default: 42`",
+    "dataRange": "-1000 ≤ N ≤ 1000",
+    "type": "example",
+    "referenceAnswer": "import java.util.Scanner;\nimport java.util.function.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        \n        // 1. Predicate — 断言\n        Predicate<Integer> isEven = x -> x % 2 == 0;\n        System.out.println(\"Is \" + n + \" even? \" + isEven.test(n));\n        \n        // 2. Function — 转换\n        Function<Integer, String> format = x -> \"Number:\" + x;\n        System.out.println(\"Formatted: \" + format.apply(n));\n        \n        // 3. Supplier — 提供默认值\n        Supplier<Integer> defaultVal = () -> 42;\n        System.out.println(\"Default: \" + defaultVal.get());\n        \n        sc.close();\n    }\n}",
+    "explanation": "## 四大函数式接口\n\n| 接口 | 方法 | 输入 | 输出 | 用途 |\n|---|---|---|---|---|\n| **Predicate&lt;T&gt;** | `test(T)` | T | boolean | 条件判断/过滤 |\n| **Function&lt;T,R&gt;** | `apply(T)` | T | R | 类型转换/映射 |\n| **Consumer&lt;T&gt;** | `accept(T)` | T | void | 消费数据/打印 |\n| **Supplier&lt;T&gt;** | `get()` | 无 | T | 工厂/默认值 |\n\n### 函数式接口 = Lambda 的\"类型\"\n```java\n// 以下等价\nPredicate<Integer> p = x -> x > 0;\nPredicate<Integer> p = (Integer x) -> { return x > 0; };\n```\n\n### 其他常用接口\n- `BiFunction<T,U,R>` — 两个参数\n- `UnaryOperator<T>` — 一元运算（输入输出同类型）\n- `BinaryOperator<T>` — 二元运算",
+    "testCases": [
+      { "input": "10\n", "output": "Is 10 even? true\nFormatted: Number:10\nDefault: 42\n", "visible": true },
+      { "input": "7\n", "output": "Is 7 even? false\nFormatted: Number:7\nDefault: 42\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_098",
+    "knowledgeLogicalId": "ch7_5",
+    "title": "字符串过滤器",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 字符串过滤器\n\n输入 N 个字符串，使用 Predicate 过滤并输出：\n1. 长度 ≥ 5 的字符串\n2. 以 'J' 开头的字符串\n\n提示：使用 `Predicate<String>` 结合 `Stream.filter()`。",
+    "inputFormat": "第一行：N\n接下来 N 行：每行一个字符串",
+    "outputFormat": "第一行：长度 ≥ 5 的字符串（空格分隔，没有则输出 None）\n第二行：以 J 开头的字符串（空格分隔，没有则输出 None）",
+    "dataRange": "1 ≤ N ≤ 50",
+    "type": "practice",
+    "testCases": [
+      { "input": "5\nJava\nPython\nJavaScript\nC\nGo\n", "output": "Java\nPython\nJavaScript\nJava\nJavaScript\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_099",
+    "knowledgeLogicalId": "ch2_5",
+    "title": "员工继承体系",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 员工继承体系\n\n定义 Employee 类（属性 name, salary，方法 getInfo() 返回员工信息）。\nManager 类继承 Employee，增加 bonus 属性，重写 getInfo() 输出包含奖金的信息。\n\n输入名字、工资、奖金，输出 Manager 的信息。",
+    "inputFormat": "三行：名字、工资(整数)、奖金(整数)",
+    "outputFormat": "一行：`{name} 工资:{salary} 奖金:{bonus}`",
+    "dataRange": "1 ≤ 所有数值 ≤ 100000",
+    "type": "practice",
+    "testCases": [
+      { "input": "Alice\n8000\n2000\n", "output": "Alice 工资:8000 奖金:2000\n", "visible": true },
+      { "input": "Bob\n10000\n5000\n", "output": "Bob 工资:10000 奖金:5000\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_100",
+    "knowledgeLogicalId": "ch2_5",
+    "title": "super 关键字使用",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## super 关键字使用\n\n定义 Vehicle 类（属性 brand，构造方法初始化 brand）。\nCar 类继承 Vehicle，增加 seats 属性。使用 super 调用父类构造方法。\n\n输入品牌和座位数，输出车辆信息。",
+    "inputFormat": "一行：品牌 座位数",
+    "outputFormat": "一行：`品牌:{brand}, 座位:{seats}`",
+    "dataRange": "品牌长度 ≤ 20, 1 ≤ 座位 ≤ 50",
+    "type": "practice",
+    "testCases": [
+      { "input": "Toyota 5\n", "output": "品牌:Toyota, 座位:5\n", "visible": true },
+      { "input": "Honda 7\n", "output": "品牌:Honda, 座位:7\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_101",
+    "knowledgeLogicalId": "ch2_7",
+    "title": "多态练习—乐器演奏",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 多态练习—乐器演奏\n\n定义 Instrument 父类，有 play() 方法（输出 `演奏乐器`）。\nPiano 子类重写 play() 输出 `钢琴演奏：叮叮咚`。\nViolin 子类重写 play() 输出 `小提琴演奏：啦啦啦`。\n\n输入乐器类型（piano/violin），用父类引用调用 play()，体现多态。",
+    "inputFormat": "一行：piano 或 violin",
+    "outputFormat": "一行：演奏输出",
+    "dataRange": "仅 piano 或 violin",
+    "type": "practice",
+    "testCases": [
+      { "input": "piano\n", "output": "钢琴演奏：叮叮咚\n", "visible": true },
+      { "input": "violin\n", "output": "小提琴演奏：啦啦啦\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_102",
+    "knowledgeLogicalId": "ch2_7",
+    "title": "instanceof 类型判断",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## instanceof 类型判断\n\n定义 Animal 父类和 Dog、Cat、Bird 三个子类，每个子类有 makeSound() 方法。\n输入动物类型，创建对应对象，使用 instanceof 判断类型后调用方法。\n\nDog → `Woof!`，Cat → `Meow!`，Bird → `Chirp!`",
+    "inputFormat": "一行：Dog/Cat/Bird",
+    "outputFormat": "叫声",
+    "dataRange": "仅 Dog/Cat/Bird",
+    "type": "practice",
+    "testCases": [
+      { "input": "Dog\n", "output": "Woof!\n", "visible": true },
+      { "input": "Bird\n", "output": "Chirp!\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_103",
+    "knowledgeLogicalId": "ch2_9",
+    "title": "多接口实现",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 多接口实现\n\n定义 Flyable 接口（方法 fly()）和 Swimmable 接口（方法 swim()）。\nDuck 类同时实现两个接口，fly() 输出 `鸭子在飞`，swim() 输出 `鸭子在游泳`。\n\n输入动作类型（fly/swim），输出对应动作。",
+    "inputFormat": "一行：fly 或 swim",
+    "outputFormat": "一行：动作描述",
+    "dataRange": "仅 fly 或 swim",
+    "type": "practice",
+    "testCases": [
+      { "input": "fly\n", "output": "鸭子在飞\n", "visible": true },
+      { "input": "swim\n", "output": "鸭子在游泳\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_104",
+    "knowledgeLogicalId": "ch2_9",
+    "title": "默认方法练习",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 默认方法练习\n\n定义 Logger 接口，包含默认方法 defaultLog() 输出 `[DEFAULT] 日志信息`。\nConsoleLogger 类实现该接口，重写 log(String msg) 输出 `[CONSOLE] {msg}`。\n\n输入日志信息，调用 defaultLog 和 log 方法。",
+    "inputFormat": "一行：日志信息",
+    "outputFormat": "两行：默认日志和自定义日志",
+    "dataRange": "信息长度 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "Hello\n", "output": "[DEFAULT] 日志信息\n[CONSOLE] Hello\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_105",
+    "knowledgeLogicalId": "ch3_7",
+    "title": "数组越界异常",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 数组越界异常\n\n输入 N 个整数和一个索引 K，输出 arr[K] 的值。\n如果索引越界，捕获 ArrayIndexOutOfBoundsException 并输出 `索引越界`。",
+    "inputFormat": "第一行：N K\n第二行：N 个整数",
+    "outputFormat": "一整数或 `索引越界`",
+    "dataRange": "1 ≤ N ≤ 20, 0 ≤ K ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "5 2\n10 20 30 40 50\n", "output": "30\n", "visible": true },
+      { "input": "3 5\n1 2 3\n", "output": "索引越界\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_106",
+    "knowledgeLogicalId": "ch3_7",
+    "title": "自定义异常",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 自定义异常\n\n定义 AgeException 类继承 Exception。\n定义 validateAge(int age) 方法，age < 0 或 age > 150 时抛出自定义异常。\n\n输入年龄，验证并输出 `年龄:{age}` 或 `无效年龄`。",
+    "inputFormat": "一行：整数年龄",
+    "outputFormat": "一行：验证结果",
+    "dataRange": "-1000 ≤ 年龄 ≤ 1000",
+    "type": "practice",
+    "testCases": [
+      { "input": "25\n", "output": "年龄:25\n", "visible": true },
+      { "input": "200\n", "output": "无效年龄\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_107",
+    "knowledgeLogicalId": "ch4_3",
+    "title": "HashSet 去重练习",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## HashSet 去重练习\n\n输入 N 个整数，使用 HashSet 去重，输出去重后的元素个数和所有元素。\n\n提示：HashSet 不保证顺序。",
+    "inputFormat": "第一行：N\n第二行：N 个整数",
+    "outputFormat": "第一行：`Count: {N}`\n第二行：去重后的元素（空格分隔）",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "6\n1 2 3 2 1 4\n", "output": "Count: 4\n1 2 3 4\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_108",
+    "knowledgeLogicalId": "ch4_3",
+    "title": "hashCode 和 equals 重写",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## hashCode 和 equals 重写\n\n定义 Student 类（id, name），重写 equals 和 hashCode（基于 id）。\n输入两个学生的 id 和 name，判断是否为同一学生。\n\n相同输出 `Same`，不同输出 `Different`。",
+    "inputFormat": "第一行：id1 name1\n第二行：id2 name2",
+    "outputFormat": "`Same` 或 `Different`",
+    "dataRange": "1 ≤ id ≤ 1000",
+    "type": "practice",
+    "testCases": [
+      { "input": "1001 Alice\n1001 Alice2\n", "output": "Same\n", "visible": true },
+      { "input": "1001 Tom\n1002 Jerry\n", "output": "Different\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_109",
+    "knowledgeLogicalId": "ch4_8",
+    "title": "泛型类实现",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 泛型类实现\n\n定义泛型类 Box<T>：\n- 属性：T content\n- 方法：setContent(T c)、getContent()\n\n输入类型标记（int/string）和内容，输出 Box 的内容。",
+    "inputFormat": "第一行：int 或 string\n第二行：内容",
+    "outputFormat": "一行：`Box contains: {内容}`",
+    "dataRange": "内容长度 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "int\n42\n", "output": "Box contains: 42\n", "visible": true },
+      { "input": "string\nHello\n", "output": "Box contains: Hello\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_110",
+    "knowledgeLogicalId": "ch4_8",
+    "title": "泛型上限练习",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 泛型上限练习\n\n定义泛型方法 max(T a, T b)，限定 T 必须实现 Comparable<T> 接口。\n输入两个整数，输出较大值。\n\n提示：`<T extends Comparable<T>>` 是类型上限语法。",
+    "inputFormat": "一行：两个整数",
+    "outputFormat": "一行：较大值",
+    "dataRange": "-10000 ≤ 整数 ≤ 10000",
+    "type": "practice",
+    "testCases": [
+      { "input": "10 20\n", "output": "20\n", "visible": true },
+      { "input": "-5 -3\n", "output": "-3\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_111",
+    "knowledgeLogicalId": "ch5_1",
+    "title": "目录文件列表",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 目录文件列表\n\n输入一个目录路径，判断它是否为目录。\n是目录输出 `DIR`，是文件输出 `FILE`，不存在输出 `NOT FOUND`。\n\n> 本题模拟 File 类的 isDirectory() / isFile() 方法。",
+    "inputFormat": "一行：路径字符串",
+    "outputFormat": "`DIR` / `FILE` / `NOT FOUND`",
+    "dataRange": "路径长度 ≤ 200",
+    "type": "practice",
+    "testCases": [
+      { "input": "/home/user\n", "output": "NOT FOUND\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_112",
+    "knowledgeLogicalId": "ch5_1",
+    "title": "文件过滤器",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 文件过滤器\n\n输入一个目录路径和一个扩展名（如 .txt）。\n使用 FilenameFilter 接口过滤出指定扩展名的文件。\n\n如果目录不存在，输出 `NOT FOUND`。\n\n> 本题为概念理解题，通过 Lambda 实现 FilenameFilter。",
+    "inputFormat": "一行：目录路径 扩展名",
+    "outputFormat": "过滤结果或 `NOT FOUND`",
+    "dataRange": "路径长度 ≤ 200",
+    "type": "practice",
+    "testCases": [
+      { "input": "/home/user .txt\n", "output": "NOT FOUND\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_113",
+    "knowledgeLogicalId": "ch5_2",
+    "title": "字节流复制模拟2",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 字节数组读写\n\n输入一行文本，模拟字节流读取：将每个字符的 ASCII 码累加求和并输出。\n\n> 提示：遍历字符串每个字符，用 (int) 转换。",
+    "inputFormat": "一行：字符串",
+    "outputFormat": "一个整数：所有 ASCII 码的和",
+    "dataRange": "字符串长度 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "ABC\n", "output": "198\n", "visible": true },
+      { "input": "12\n", "output": "99\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_114",
+    "knowledgeLogicalId": "ch5_2",
+    "title": "try-with-resources 练习",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## try-with-resources 练习\n\n理解 try-with-resources 语法：\n输入一个字符串，模拟使用 InputStream 读取后自动关闭资源。\n\n输出格式：\n- 第一行：读取到的内容（即输入字符串）\n- 第二行：`Stream closed`",
+    "inputFormat": "一行：字符串",
+    "outputFormat": "第一行：字符串内容\n第二行：`Stream closed`",
+    "dataRange": "字符串长度 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "Hello\n", "output": "Hello\nStream closed\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_115",
+    "knowledgeLogicalId": "ch6_2",
+    "title": "Runnable 接口创建线程",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Runnable 接口创建线程\n\n使用实现 Runnable 接口的方式创建线程。\n定义 PrintTask 类实现 Runnable，run() 中打印 `Task executed by {threadName}`。\n\n创建并启动两个线程。",
+    "inputFormat": "无输入",
+    "outputFormat": "两行，每行显示线程名",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "Task executed by Thread-0\nTask executed by Thread-1\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_116",
+    "knowledgeLogicalId": "ch6_2",
+    "title": "匿名内部类创建线程",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 匿名内部类创建线程\n\n使用匿名内部类方式创建线程：\n- 线程1 打印 `Anonymous 1`\n- 线程2 打印 `Anonymous 2`\n\n使用 join 确保顺序输出。",
+    "inputFormat": "无输入",
+    "outputFormat": "两行",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "Anonymous 1\nAnonymous 2\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_117",
+    "knowledgeLogicalId": "ch7_3",
+    "title": "Optional 链式调用",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Optional 链式调用\n\n定义一个方法 getUserById(int id)，返回 Optional<String>：\n- id=1 → \"Alice\"\n- id=2 → \"Bob\"\n- 其他 → null\n\n输入 id，使用 Optional 获取用户名，不存在时输出 `Guest`。",
+    "inputFormat": "一行：整数 id",
+    "outputFormat": "一行：用户名或 Guest",
+    "dataRange": "0 ≤ id ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "1\n", "output": "Alice\n", "visible": true },
+      { "input": "99\n", "output": "Guest\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_118",
+    "knowledgeLogicalId": "ch7_3",
+    "title": "Optional map 操作",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Optional map 操作\n\n输入一个可能为空的字符串（输入 \"null\" 表示空值）。\n使用 Optional 处理：不为空时转为大写并添加前缀 \"Result: \"；为空时输出 \"Empty\"。",
+    "inputFormat": "一行：字符串或 null",
+    "outputFormat": "处理后的字符串",
+    "dataRange": "字符串长度 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "hello\n", "output": "Result: HELLO\n", "visible": true },
+      { "input": "null\n", "output": "Empty\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_119",
+    "knowledgeLogicalId": "ch1_0",
+    "title": "JDK 和 JRE 的区别",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## JDK 和 JRE 的区别\n\n编写程序，输出 Java 的版本信息。\n\n使用 `System.getProperty(\"java.version\")` 获取 Java 版本并输出：\n`Java Version: {版本号}`",
+    "inputFormat": "无输入",
+    "outputFormat": "一行：Java 版本信息",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "Java Version: 21.0.1\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_120",
+    "knowledgeLogicalId": "ch1_1",
+    "title": "多行输出练习",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 多行输出练习\n\n使用 println 输出以下图案：\n```\n   *\n  ***\n *****\n*******\n```\n\n> 提示：每行用空格填充左侧。",
+    "inputFormat": "无输入",
+    "outputFormat": "4行，每行前面有对应数量的空格",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "   *\n  ***\n *****\n*******\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_121",
+    "knowledgeLogicalId": "ch1_3",
+    "title": "位运算练习",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 位运算练习\n\n输入两个整数 a 和 b，输出它们的按位与(&)、按位或(|)、按位异或(^)的结果。",
+    "inputFormat": "一行：两个整数",
+    "outputFormat": "三行：a&b, a|b, a^b",
+    "dataRange": "0 ≤ a, b ≤ 255",
+    "type": "practice",
+    "testCases": [
+      { "input": "5 3\n", "output": "1\n7\n6\n", "visible": true },
+      { "input": "12 10\n", "output": "8\n14\n6\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_122",
+    "knowledgeLogicalId": "ch1_7",
+    "title": "方法重载求和",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 方法重载求和\n\n定义重载方法 sum：\n- sum(int a, int b) 返回两数之和\n- sum(int[] arr) 返回数组元素之和\n\n输入 N 和 N 个整数，使用 sum(int[] arr) 计算总和。",
+    "inputFormat": "第一行：N\n第二行：N 个整数",
+    "outputFormat": "一个整数：和",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "5\n1 2 3 4 5\n", "output": "15\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_123",
+    "knowledgeLogicalId": "ch2_0",
+    "title": "汽车类设计",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 汽车类设计\n\n定义 Car 类：\n- 属性：brand(String), speed(int)\n- 方法：accelerate(int delta) → speed += delta\n- 方法：brake(int delta) → speed = max(0, speed - delta)\n\n输入品牌、初始速度、加速量和减速量，输出最终速度。",
+    "inputFormat": "一行：品牌 初始速度 加速量 减速量",
+    "outputFormat": "一行：`{brand} speed: {最终速度}`",
+    "dataRange": "0 ≤ 所有速度 ≤ 300",
+    "type": "practice",
+    "testCases": [
+      { "input": "BMW 60 20 30\n", "output": "BMW speed: 50\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_124",
+    "knowledgeLogicalId": "ch2_1",
+    "title": "计数器对象",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 计数器对象\n\n定义 Counter 类：\n- 属性：count(int)，初始值 0\n- 方法：increment() → count++\n- 方法：decrement() → count--\n- 方法：getCount() → 返回 count\n\n输入 N 个操作（+ 表示 increment，- 表示 decrement），输出最终计数值。",
+    "inputFormat": "第一行：N\n第二行：N 个字符（+ 或 -）",
+    "outputFormat": "一个整数：最终计数值",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "5\n+++--\n", "output": "1\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_125",
+    "knowledgeLogicalId": "ch2_2",
+    "title": "温度计类",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 温度计类\n\n定义 Thermometer 类：\n- 成员变量：celsius(double)\n- 方法：getFahrenheit() → 返回华氏温度 = celsius × 9/5 + 32\n- 方法：getKelvin() → 返回开氏温度 = celsius + 273.15\n\n输入摄氏温度，输出华氏和开氏温度（保留1位小数）。",
+    "inputFormat": "一行：摄氏温度",
+    "outputFormat": "第一行：华氏温度\n第二行：开氏温度",
+    "dataRange": "-100 ≤ 温度 ≤ 500",
+    "type": "practice",
+    "testCases": [
+      { "input": "100\n", "output": "212.0\n373.2\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_126",
+    "knowledgeLogicalId": "ch2_3",
+    "title": "链式构造",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 链式构造\n\n定义 Point 类：\n- 属性：x(int), y(int)\n- 无参构造 → (0,0)\n- 带参构造 → (x,y)\n- getDistance() → 返回距离原点的欧氏距离（取整）\n\n输入 x y，输出到原点的距离。",
+    "inputFormat": "一行：x y",
+    "outputFormat": "一个整数：距离",
+    "dataRange": "-1000 ≤ x, y ≤ 1000",
+    "type": "practice",
+    "testCases": [
+      { "input": "3 4\n", "output": "5\n", "visible": true },
+      { "input": "6 8\n", "output": "10\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_127",
+    "knowledgeLogicalId": "ch2_4",
+    "title": "密码安全验证",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 密码安全验证\n\n定义 Password 类：\n- private String value\n- setValue(String v)：v 长度 ≥ 6 才设置，否则设为 \"invalid\"\n- getStrength()：长度 ≥ 10 返回 \"strong\"，≥ 6 返回 \"medium\"，否则 \"weak\"\n\n输入密码字符串，输出密码强度。",
+    "inputFormat": "一行：密码字符串",
+    "outputFormat": "一行：strong/medium/weak/invalid",
+    "dataRange": "长度 ≤ 50",
+    "type": "practice",
+    "testCases": [
+      { "input": "abcdefghij\n", "output": "strong\n", "visible": true },
+      { "input": "abc\n", "output": "invalid\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_128",
+    "knowledgeLogicalId": "ch2_6",
+    "title": "方法重写练习",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 方法重写练习\n\n定义 Appliance 父类（work() 输出 `Appliance working`）。\nWashingMachine 子类重写 work() 输出 `Washing clothes...`。\nFridge 子类重写 work() 输出 `Cooling food...`。\n\n输入电器类型，输出工作状态。",
+    "inputFormat": "一行：washer 或 fridge",
+    "outputFormat": "一行：工作状态",
+    "dataRange": "仅 washer/fridge",
+    "type": "practice",
+    "testCases": [
+      { "input": "washer\n", "output": "Washing clothes...\n", "visible": true },
+      { "input": "fridge\n", "output": "Cooling food...\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_129",
+    "knowledgeLogicalId": "ch2_8",
+    "title": "模板方法模式",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 模板方法模式\n\n抽象类 DataProcessor：\n- 模板方法 process()：调用 readData() → processData() → writeData()\n- 抽象方法 readData()、processData()、writeData()\n\nCSVProcessor 子类实现三个方法，分别输出 `Reading CSV`、`Processing CSV`、`Writing CSV`。\n\n输入无，调用 process() 输出完整流程。",
+    "inputFormat": "无输入",
+    "outputFormat": "三行，模板方法三个步骤",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "Reading CSV\nProcessing CSV\nWriting CSV\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_130",
+    "knowledgeLogicalId": "ch2_10",
+    "title": "匿名内部类练习",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 匿名内部类练习\n\n使用匿名内部类实现 Comparator 接口：\n输入 N 个字符串，按长度降序排列（长的在前），长度相同按字典序。\n\n提示：`Arrays.sort(arr, new Comparator<String>() {...})`。",
+    "inputFormat": "第一行：N\n接下来 N 行：每行一个字符串",
+    "outputFormat": "排序后的字符串，每行一个",
+    "dataRange": "1 ≤ N ≤ 50",
+    "type": "practice",
+    "testCases": [
+      { "input": "3\nJava\nGo\nPython\n", "output": "Python\nJava\nGo\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_131",
+    "knowledgeLogicalId": "ch2_11",
+    "title": "枚举状态机",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 枚举状态机\n\n定义枚举 OrderStatus：PENDING → SHIPPED → DELIVERED，每个状态有 next() 方法（DELIVERED 的 next 返回自身）。\n\n输入当前状态，输出下一个状态。",
+    "inputFormat": "一行：PENDING/SHIPPED/DELIVERED",
+    "outputFormat": "一行：下一个状态",
+    "dataRange": "仅三种状态之一",
+    "type": "practice",
+    "testCases": [
+      { "input": "PENDING\n", "output": "SHIPPED\n", "visible": true },
+      { "input": "DELIVERED\n", "output": "DELIVERED\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_132",
+    "knowledgeLogicalId": "ch3_2",
+    "title": "StringBuffer 线程安全",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## StringBuffer 线程安全\n\n输入一个字符串，使用 StringBuffer 完成以下操作：\n1. 在后面追加 \" World\"\n2. 在第 0 位插入 \"Hello, \"（如果原字符串为空则只插入）\n3. 输出最终结果\n\n如果输入为空，默认输出 `Hello, World`",
+    "inputFormat": "一行：字符串或空行",
+    "outputFormat": "一行：处理后的字符串",
+    "dataRange": "长度 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "CodeMate\n", "output": "Hello, CodeMate World\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_133",
+    "knowledgeLogicalId": "ch3_3",
+    "title": "自动拆箱陷阱",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 自动拆箱陷阱\n\n输入两个 Integer 对象的值（空格分隔），比较它们是否相等：\n1. 使用 == 比较（比较引用）\n2. 使用 equals() 比较（比较值）\n\n输出两次比较的结果。\n\n> 提示：Integer.valueOf() 在 -128~127 范围内会缓存。输入可能超出此范围。",
+    "inputFormat": "一行：两个整数",
+    "outputFormat": "第一行：`==: true/false`\n第二行：`equals: true/false`",
+    "dataRange": "-1000 ≤ 整数 ≤ 1000",
+    "type": "practice",
+    "testCases": [
+      { "input": "100 100\n", "output": "==: true\nequals: true\n", "visible": true },
+      { "input": "200 200\n", "output": "==: false\nequals: true\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_134",
+    "knowledgeLogicalId": "ch3_4",
+    "title": "Math 工具方法",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Math 工具方法\n\n输入一个浮点数 x，输出：\n1. ceil(x) — 向上取整\n2. floor(x) — 向下取整\n3. round(x) — 四舍五入\n4. abs(x) — 绝对值",
+    "inputFormat": "一行：一个浮点数",
+    "outputFormat": "四行，每行一个整数或浮点数",
+    "dataRange": "-100.0 ≤ x ≤ 100.0",
+    "type": "practice",
+    "testCases": [
+      { "input": "3.7\n", "output": "4.0\n3.0\n4\n3.7\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_135",
+    "knowledgeLogicalId": "ch3_5",
+    "title": "日期格式化",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 日期格式化\n\n输入一个日期（yyyy-MM-dd），使用 DateTimeFormatter 将其格式化为 `yyyy年MM月dd日` 格式输出。\n\n> 假设输入总是有效日期。",
+    "inputFormat": "一行：日期（yyyy-MM-dd）",
+    "outputFormat": "一行：中文格式日期",
+    "dataRange": "任意有效日期",
+    "type": "practice",
+    "testCases": [
+      { "input": "2026-06-09\n", "output": "2026年06月09日\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_136",
+    "knowledgeLogicalId": "ch3_6",
+    "title": "邮箱格式验证",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 邮箱格式验证\n\n输入一个字符串，判断是否为合法邮箱格式。\n\n规则（简化）：\n- 包含恰好一个 @\n- @ 前后都有字符（不能以 @ 开头或结尾）\n- 包含一个 . 在 @ 之后\n\n是输出 `Valid`，否输出 `Invalid`。",
+    "inputFormat": "一行：字符串",
+    "outputFormat": "`Valid` 或 `Invalid`",
+    "dataRange": "长度 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "test@example.com\n", "output": "Valid\n", "visible": true },
+      { "input": "@example.com\n", "output": "Invalid\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_137",
+    "knowledgeLogicalId": "ch4_0",
+    "title": "集合框架遍历对比",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 集合框架遍历对比\n\n输入 N 个整数，存入 ArrayList，使用三种方式遍历输出：\n1. 普通 for 循环\n2. 增强 for 循环 (for-each)\n3. Iterator 迭代器\n\n每种方式输出一行（元素空格分隔）。",
+    "inputFormat": "第一行：N\n第二行：N 个整数",
+    "outputFormat": "三行，每行格式：`{方式}: {元素列表}`",
+    "dataRange": "1 ≤ N ≤ 20",
+    "type": "practice",
+    "testCases": [
+      { "input": "3\n1 2 3\n", "output": "for: 1 2 3\nfor-each: 1 2 3\niterator: 1 2 3\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_138",
+    "knowledgeLogicalId": "ch4_1",
+    "title": "ArrayList 动态扩容",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## ArrayList 动态扩容\n\n输入 N 个整数存入 ArrayList，完成以下操作：\n1. 在第 0 位插入 0\n2. 删除最后一个元素\n3. 将索引 1 的元素改为 999\n4. 输出最终列表",
+    "inputFormat": "第一行：N\n第二行：N 个整数",
+    "outputFormat": "一行：最终列表",
+    "dataRange": "1 ≤ N ≤ 50",
+    "type": "practice",
+    "testCases": [
+      { "input": "3\n10 20 30\n", "output": "[0, 999, 20]\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_139",
+    "knowledgeLogicalId": "ch4_2",
+    "title": "双向链表操作",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 双向链表操作\n\n使用 LinkedList 实现栈（LIFO）：\n- push N：压入 N\n- pop：弹出并输出栈顶元素\n- peek：查看栈顶元素（不弹出）\n- end：结束\n\n输入命令序列，输出对应结果。",
+    "inputFormat": "每行一个命令",
+    "outputFormat": "每个 pop/peek 命令输出一行",
+    "dataRange": "总命令数 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "push 10\npush 20\npeek\npop\npop\nend\n", "output": "20\n20\n10\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_140",
+    "knowledgeLogicalId": "ch4_4",
+    "title": "Comparable 自然排序",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Comparable 自然排序\n\n定义 Fruit 类实现 Comparable<Fruit>（按价格升序）。\n输入 N 和 N 行水果（名称 价格），输出按价格升序排列的水果列表。",
+    "inputFormat": "第一行：N\n接下来 N 行：名称 价格",
+    "outputFormat": "N 行：`{名称}: {价格}`",
+    "dataRange": "1 ≤ N ≤ 50",
+    "type": "practice",
+    "testCases": [
+      { "input": "3\nApple 8\nBanana 3\nCherry 12\n", "output": "Banana: 3\nApple: 8\nCherry: 12\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_141",
+    "knowledgeLogicalId": "ch4_5",
+    "title": "HashMap 缓存模拟",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## HashMap 缓存模拟\n\n使用 HashMap 实现一个简单的缓存：\n- put key value：存入键值对，输出 `Stored`\n- get key：获取键对应的值，存在输出值，不存在输出 `Miss`\n- end：结束\n\n输入命令序列，输出对应结果。",
+    "inputFormat": "每行一个命令，格式 `put key value` 或 `get key` 或 `end`",
+    "outputFormat": "每个命令对应的输出",
+    "dataRange": "总命令数 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "put name Alice\nput age 20\nget name\nget city\nend\n", "output": "Stored\nStored\nAlice\nMiss\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_142",
+    "knowledgeLogicalId": "ch4_6",
+    "title": "范围查询统计",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 范围查询统计\n\n使用 TreeMap 按分数段统计学生数量：\n输入 N 个学生（姓名 分数），按分数段统计：\n- 90-100：优秀\n- 80-89：良好\n- 70-79：中等\n- 60-69：及格\n- 0-59：不及格\n\n输出各分数段人数。",
+    "inputFormat": "第一行：N\n接下来 N 行：姓名 分数",
+    "outputFormat": "5行：优秀: X, 良好: X, 中等: X, 及格: X, 不及格: X",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "4\nAlice 95\nBob 82\nCharlie 78\nDavid 55\n", "output": "优秀: 1\n良好: 1\n中等: 1\n及格: 0\n不及格: 1\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_143",
+    "knowledgeLogicalId": "ch4_7",
+    "title": "二分查找练习",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 二分查找练习\n\n输入一个已排序的 N 个整数和一个目标值 target。\n使用 Collections.binarySearch() 查找目标值的索引。\n找到输出索引，未找到输出 `-1`（注意 binarySearch 返回的是负值，需要处理）。",
+    "inputFormat": "第一行：N target\n第二行：N 个已排序的整数",
+    "outputFormat": "一个整数：索引（从0开始），未找到输出 -1",
+    "dataRange": "1 ≤ N ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "5 30\n10 20 30 40 50\n", "output": "2\n", "visible": true },
+      { "input": "5 25\n10 20 30 40 50\n", "output": "-1\n", "visible": false }
+    ]
+  },
+  {
+    "logicalId": "q_144",
+    "knowledgeLogicalId": "ch5_3",
+    "title": "字符流读取统计",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 字符流读取统计\n\n输入多行文本（最后一行是 END），统计：\n1. 总字符数（不含换行）\n2. 总单词数（空格分隔）",
+    "inputFormat": "多行文本，END 结束",
+    "outputFormat": "第一行：`Chars: {N}`\n第二行：`Words: {N}`",
+    "dataRange": "总行数 ≤ 100",
+    "type": "practice",
+    "testCases": [
+      { "input": "Hello World\nCodeMate AI\nEND\n", "output": "Chars: 22\nWords: 4\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_145",
+    "knowledgeLogicalId": "ch5_4",
+    "title": "缓冲区分块读取",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 缓冲区分块读取\n\n模拟 BufferedReader 的分块读取：\n输入一个长字符串和块大小 K，每次读 K 个字符，输出每块内容（每行一块）。\n最后不足 K 个字符也输出。\n\n> 提示：用 substring 模拟 read(buf, 0, K)。",
+    "inputFormat": "第一行：字符串\n第二行：整数 K",
+    "outputFormat": "每块一行",
+    "dataRange": "字符串长度 ≤ 200, 1 ≤ K ≤ 50",
+    "type": "practice",
+    "testCases": [
+      { "input": "HelloWorld\n3\n", "output": "Hel\nloW\norl\nd\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_146",
+    "knowledgeLogicalId": "ch5_5",
+    "title": "Serializable 标记接口",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Serializable 标记接口\n\n定义 Product 类实现 Serializable：\n- id(int), name(String), price(double)\n- transient double tempData（不会被序列化）\n- toString() 输出信息\n\n输入 id name price tempData，创建对象并输出。注意 tempData 在反序列化后为 0.0。",
+    "inputFormat": "一行：id name price tempData",
+    "outputFormat": "一行：对象信息",
+    "dataRange": "1 ≤ id ≤ 1000, price > 0",
+    "type": "practice",
+    "testCases": [
+      { "input": "101 Book 29.9 123.4\n", "output": "Product{id=101, name='Book', price=29.9}\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_147",
+    "knowledgeLogicalId": "ch6_1",
+    "title": "sleep 与线程调度",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## sleep 与线程调度\n\n创建线程打印 `Start` → sleep 100ms → 打印 `End`。\n\n输入无，输出线程在 sleep 前后的状态。\n\n提示：使用 Thread.sleep()，注意 InterruptedException。",
+    "inputFormat": "无输入",
+    "outputFormat": "两行：Start 和 End",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "Start\nEnd\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_148",
+    "knowledgeLogicalId": "ch6_3",
+    "title": "volatile 可见性",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## volatile 可见性\n\n定义 Flag 类包含 volatile boolean flag = false。\n理解 volatile 的作用：保证多线程间的可见性。\n\n主线程设置 flag = true，子线程检测到 flag 为 true 时退出循环并打印 `Detected`。\n\n输入无，输出子线程检测结果。",
+    "inputFormat": "无输入",
+    "outputFormat": "一行：`Detected`",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "Detected\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_149",
+    "knowledgeLogicalId": "ch6_4",
+    "title": "Callable 和 Future",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 2000,
+    "memoryLimitMb": 256,
+    "description": "## Callable 和 Future\n\n使用 Callable<Integer> 创建任务，返回 1+2+3+...+100 的和（5050）。\nExecutorService 提交任务，通过 Future.get() 获取结果。\n\n输入无，输出计算结果。",
+    "inputFormat": "无输入",
+    "outputFormat": "一个整数：5050",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "5050\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_150",
+    "knowledgeLogicalId": "ch6_5",
+    "title": "AtomicInteger 原子操作",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## AtomicInteger 原子操作\n\n使用 AtomicInteger 实现线程安全的计数器：\n- 3 个线程，每个线程递增 100 次\n- 使用 AtomicInteger.incrementAndGet()\n- 最终输出计数值（正确结果：300）\n\n> 注意：本题简化为单线程模拟，输出最终结果即可。",
+    "inputFormat": "无输入",
+    "outputFormat": "一个整数：300",
+    "dataRange": "无",
+    "type": "practice",
+    "testCases": [
+      { "input": "", "output": "300\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_151",
+    "knowledgeLogicalId": "ch7_1",
+    "title": "Lambda 遍历集合",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Lambda 遍历集合\n\n输入 N 个整数存入 ArrayList，使用 forEach 方法和 Lambda 表达式遍历输出每个元素的平方。\n\n提示：`list.forEach(x -> System.out.println(x * x))`",
+    "inputFormat": "第一行：N\n第二行：N 个整数",
+    "outputFormat": "N 行，每行一个平方值",
+    "dataRange": "1 ≤ N ≤ 50",
+    "type": "practice",
+    "testCases": [
+      { "input": "3\n1 2 3\n", "output": "1\n4\n9\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_152",
+    "knowledgeLogicalId": "ch7_2",
+    "title": "Stream 分组统计",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## Stream 分组统计\n\n输入 N 个字符串，使用 Stream 按首字母分组（转为大写后取首字母）。\n输出每组包含的元素（按组输出，任意顺序）。",
+    "inputFormat": "第一行：N\n接下来 N 行：字符串",
+    "outputFormat": "每组一行：`{首字母}: [元素列表]`",
+    "dataRange": "1 ≤ N ≤ 50",
+    "type": "practice",
+    "testCases": [
+      { "input": "4\napple\nant\nbanana\nboat\n", "output": "A: [apple, ant]\nB: [banana, boat]\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_153",
+    "knowledgeLogicalId": "ch7_4",
+    "title": "构造方法引用工厂",
+    "difficulty": "easy",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 构造方法引用工厂\n\n使用 Supplier 和构造方法引用创建对象：\n- `Supplier<ArrayList<Integer>> factory = ArrayList::new`\n\n输入 N 个整数，用工厂创建 ArrayList 并存入数据，输出列表内容。",
+    "inputFormat": "第一行：N\n第二行：N 个整数",
+    "outputFormat": "一行：列表内容",
+    "dataRange": "1 ≤ N ≤ 50",
+    "type": "practice",
+    "testCases": [
+      { "input": "4\n5 6 7 8\n", "output": "[5, 6, 7, 8]\n", "visible": true }
+    ]
+  },
+  {
+    "logicalId": "q_154",
+    "knowledgeLogicalId": "ch7_5",
+    "title": "自定义函数式接口",
+    "difficulty": "medium",
+    "languageLimit": "java",
+    "timeLimitMs": 1000,
+    "memoryLimitMb": 256,
+    "description": "## 自定义函数式接口\n\n定义 @FunctionalInterface TriFunction<T, U, V, R>：\n- 方法：R apply(T t, U u, V v)\n\n使用 Lambda 实现三个数的连接（字符串拼接）。\n\n输入三个字符串，输出拼接结果。",
+    "inputFormat": "一行：三个字符串，空格分隔",
+    "outputFormat": "一行，拼接结果",
+    "dataRange": "每个字符串长度 ≤ 20",
+    "type": "practice",
+    "testCases": [
+      { "input": "Hello Java World\n", "output": "HelloJavaWorld\n", "visible": true }
+    ]
+  }]
